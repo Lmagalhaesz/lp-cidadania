@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { EVENTO_QUIZ, lerResultado, type ResultadoQuiz } from "@/lib/eventos";
-import type { Variante } from "@/variantes/tipos";
+import { variantePorSlug } from "@/variantes/registro";
 import s from "./Vsl.module.css";
 
 /**
@@ -12,8 +12,9 @@ import s from "./Vsl.module.css";
  * a página funciona antes da gravação, e o embed real entra trocando
  * UMA string na variante.
  */
-export default function Vsl({ variante }: { variante: Variante }) {
-  const { vsl, slug, quiz } = variante;
+export default function Vsl({ slug }: { slug: string }) {
+  const variante = variantePorSlug(slug);
+  const { vsl, quiz } = variante;
   const [resultado, setResultado] = useState<ResultadoQuiz | null>(null);
   const [tocando, setTocando] = useState(false);
 

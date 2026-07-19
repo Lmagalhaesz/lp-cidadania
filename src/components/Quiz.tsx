@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import { ga4Event } from "@/lib/analytics";
 import { publicarResultado, type RespostaQuiz } from "@/lib/eventos";
-import type { ResultadoDef, Variante } from "@/variantes/tipos";
+import { variantePorSlug } from "@/variantes/registro";
+import type { ResultadoDef } from "@/variantes/tipos";
 import s from "./Quiz.module.css";
 
 type Fase = "perguntas" | "urgencia" | "resultado";
@@ -13,12 +14,22 @@ type Fase = "perguntas" | "urgencia" | "resultado";
  * O resultado personaliza a seção do vídeo e viaja no payload do lead
  * (via CustomEvent + sessionStorage — ver src/lib/eventos.ts).
  * Quem cai em "provavelmente sem direito" NÃO é empurrado pro WhatsApp.
+ * Recebe o slug (não o objeto) porque a variante carrega funções.
  */
-export default function Quiz({ variante }: { variante: Variante }) {
-  const { quiz, slug } = variante;
+export default function Quiz({ slug }: { slug: string }) {
+  const variante = variantePorSlug(slug);
+  const { quiz } = variante;
   const [fase, setFase] = useState<Fase>("perguntas");
   const [indice, setIndice] = useState(0);
   const [respostas, setRespostas] = useState<Record<string, string>>({});
+
+  /* perguntas visíveis dado o que já foi respondido (árvore condicional).
+     Condições só olham respostas ANTERIORES, então a lista é estável para
+     os índices já percorridos. */
+  const visiveis = useMemo(
+    () => quiz.perguntas.filter((p) => !p.mostrarSe || p.mostrarSe(respostas)),
+    [quiz.perguntas, respostas]
+  );
 
   const resultado: ResultadoDef | null = useMemo(() => {
     if (fase !== "resultado") return null;
@@ -26,13 +37,16 @@ export default function Quiz({ variante }: { variante: Variante }) {
     return quiz.resultados.find((r) => r.id === id) ?? null;
   }, [fase, quiz, respostas]);
 
-  const total = quiz.perguntas.length + 1; // + urgência
+  const total = visiveis.length + 1; // + urgência
   const passo = fase === "perguntas" ? indice + 1 : total;
 
   function responder(perguntaId: string, valor: string) {
     const proximas = { ...respostas, [perguntaId]: valor };
     setRespostas(proximas);
-    if (indice + 1 < quiz.perguntas.length) {
+    const proximasVisiveis = quiz.perguntas.filter(
+      (p) => !p.mostrarSe || p.mostrarSe(proximas)
+    );
+    if (indice + 1 < proximasVisiveis.length) {
       setIndice(indice + 1);
     } else {
       setFase("urgencia");
@@ -42,7 +56,7 @@ export default function Quiz({ variante }: { variante: Variante }) {
   function responderUrgencia(valor: string) {
     const id = quiz.avaliar(respostas);
     const def = quiz.resultados.find((r) => r.id === id);
-    const detalhadas: RespostaQuiz[] = quiz.perguntas.map((p) => ({
+    const detalhadas: RespostaQuiz[] = visiveis.map((p) => ({
       pergunta: p.id,
       resposta: respostas[p.id] ?? "",
     }));
@@ -59,7 +73,7 @@ export default function Quiz({ variante }: { variante: Variante }) {
   function voltar() {
     if (fase === "urgencia") {
       setFase("perguntas");
-      setIndice(quiz.perguntas.length - 1);
+      setIndice(visiveis.length - 1);
     } else if (indice > 0) {
       setIndice(indice - 1);
     }
@@ -71,7 +85,7 @@ export default function Quiz({ variante }: { variante: Variante }) {
     setFase("perguntas");
   }
 
-  const pergunta = fase === "perguntas" ? quiz.perguntas[indice] : quiz.urgencia;
+  const pergunta = fase === "perguntas" ? visiveis[indice] : quiz.urgencia;
 
   return (
     <section id="verificar" className={s.secao}>

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ga4Event, lerCookie, novoEventId, pixelTrack } from "@/lib/analytics";
 import { EVENTO_QUIZ, lerResultado, type ResultadoQuiz } from "@/lib/eventos";
 import { linkWhatsApp, MARCA } from "@/lib/marca";
-import type { Variante } from "@/variantes/tipos";
+import { variantePorSlug } from "@/variantes/registro";
 import s from "./FormLead.module.css";
 
 /* ▼ CONECTE O FORMULÁRIO AQUI ▼
@@ -22,8 +22,9 @@ type Estado = "inicial" | "enviando" | "enviado" | "erro";
  * recebe o lead JÁ com contexto. Sem pergunta financeira: o vídeo ancora a
  * seriedade do investimento.
  */
-export default function FormLead({ variante }: { variante: Variante }) {
-  const { form, quiz, slug, idPayload } = variante;
+export default function FormLead({ slug }: { slug: string }) {
+  const variante = variantePorSlug(slug);
+  const { form, quiz, idPayload } = variante;
   const [estado, setEstado] = useState<Estado>("inicial");
   const [resultado, setResultado] = useState<ResultadoQuiz | null>(null);
   const [urgencia, setUrgencia] = useState("");

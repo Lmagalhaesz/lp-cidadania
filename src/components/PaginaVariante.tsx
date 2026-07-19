@@ -22,13 +22,15 @@ export default function PaginaVariante({ variante }: { variante: Variante }) {
       <Navbar ctaRotulo={variante.hero.ctaQuiz} />
       <main>
         <Hero variante={variante} />
-        <Quiz variante={variante} />
-        <Vsl variante={variante} />
+        {/* client components recebem o slug: a variante tem funções e não
+            atravessa a fronteira server→client */}
+        <Quiz slug={variante.slug} />
+        <Vsl slug={variante.slug} />
         <Advogado variante={variante} />
         <Metodo variante={variante} />
         <Filtro variante={variante} />
         <Faq variante={variante} />
-        <FormLead variante={variante} />
+        <FormLead slug={variante.slug} />
       </main>
       <Footer />
       <ScrollFx />

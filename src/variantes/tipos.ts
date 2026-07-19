@@ -22,6 +22,12 @@ export type PerguntaQuiz = {
   /** microcopy de apoio (ex.: "vale pai, mãe, avô ou bisavô") */
   ajuda?: string;
   opcoes: OpcaoQuiz[];
+  /**
+   * Pergunta condicional: só aparece se retornar true para as respostas já
+   * dadas (as árvores de elegibilidade reais ramificam por geração).
+   * Ausente = sempre aparece.
+   */
+  mostrarSe?: (respostas: Record<string, string>) => boolean;
 };
 
 export type TomResultado = "aberto" | "atencao" | "negativo";
