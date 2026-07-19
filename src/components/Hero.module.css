@@ -1,0 +1,107 @@
+.dobra {
+  padding-block: clamp(56px, 9vw, 110px) clamp(40px, 6vw, 72px);
+  position: relative;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: end;
+}
+
+.colTexto {
+  min-width: 0;
+}
+
+.h1 {
+  font-size: clamp(34px, 5.6vw, 62px);
+  margin-top: 20px;
+  max-width: 15ch;
+}
+
+.destaque {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--lacre);
+}
+
+.sub {
+  margin-top: 22px;
+  font-size: clamp(17px, 1.9vw, 19px);
+  color: var(--tinta-2);
+  max-width: 54ch;
+}
+
+.acoes {
+  margin-top: 34px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.acaoNota {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--tinta-3);
+}
+
+/* ficha de base legal: o "concreto real" da dobra, em forma de documento */
+.ficha {
+  background: var(--papel-2);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-ficha);
+  padding: 24px 24px 18px;
+  position: relative;
+}
+
+/* furo de fichário */
+.ficha::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--linha-forte);
+  border-radius: 50%;
+}
+
+.fichaRotulo {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lacre);
+}
+
+.fichaTexto {
+  margin-top: 12px;
+  font-family: var(--fonte-titulo);
+  font-size: 18.5px;
+  line-height: 1.45;
+}
+
+.ficha hr {
+  margin-block: 14px 10px;
+}
+
+.fichaFonte {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--tinta-3);
+}
+
+@media (max-width: 860px) {
+  .grade {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .ficha {
+    max-width: 480px;
+  }
+}

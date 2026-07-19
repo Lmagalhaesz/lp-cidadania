@@ -1,0 +1,17 @@
+# deps e build
+/node_modules
+/.next
+/out
+
+# ambiente (o init-ssl.sh grava NGINX_CONF aqui; nunca versionar)
+.env*
+*.pem
+
+# artefatos de verificação
+/tests/screenshots
+/tests/relatorio
+
+# sistema
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts

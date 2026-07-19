@@ -1,0 +1,61 @@
+.pagina {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+.miolo {
+  width: 100%;
+  padding-block: 64px;
+}
+
+.wordmark {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 600;
+}
+
+.descritor {
+  margin-top: 8px;
+  color: var(--tinta-2);
+  font-size: 15px;
+}
+
+.lista {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 18px;
+  border-top: 1px solid var(--linha);
+  text-decoration: none;
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--linha);
+}
+
+.itemPais {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+.itemNome {
+  font-family: var(--fonte-titulo);
+  font-size: 22px;
+  transition: color 0.12s ease;
+}
+
+.item:hover .itemNome {
+  color: var(--lacre);
+}

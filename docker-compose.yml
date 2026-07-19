@@ -1,0 +1,34 @@
+# LP Cidadania (Dr. Gustavo Ribeiro) — stack isolada: rede, volumes e
+# containers próprios. Nada compartilhado com a LP da Funnely.
+#
+# PORTAS: parametrizadas porque o servidor atual já tem a funnely-lp em
+# 80/443. Ver docs/DEPLOY.md para as duas opções (servidor próprio vs
+# proxy na frente). Default: 80/443 (servidor dedicado).
+
+services:
+  web:
+    build: .
+    image: cidadania-lp
+    container_name: cidadania-web
+    restart: unless-stopped
+    ports:
+      - "${PORTA_HTTP:-80}:80"
+      - "${PORTA_HTTPS:-443}:443"
+    volumes:
+      # conf ativa via env (init-ssl.sh troca p/ nginx-ssl.conf sem git conflict)
+      - ${NGINX_CONF:-./deploy/nginx.conf}:/etc/nginx/conf.d/default.conf:ro
+      - certbot_webroot:/var/www/certbot
+      - certbot_certs:/etc/letsencrypt
+
+  certbot:
+    image: certbot/certbot
+    container_name: cidadania-certbot
+    restart: unless-stopped
+    volumes:
+      - certbot_webroot:/var/www/certbot
+      - certbot_certs:/etc/letsencrypt
+    entrypoint: /bin/sh -c 'trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot --quiet; sleep 12h & wait $${!}; done'
+
+volumes:
+  certbot_webroot:
+  certbot_certs:

@@ -1,0 +1,247 @@
+/* ============================================================
+   IDENTIDADE "DOSSIÊ DE ARQUIVO" — tokens white-label
+   ------------------------------------------------------------
+   A estética vem do universo real do processo: papel de
+   certidão, tinta de registro, lacre. Nada de dourado+bandeira,
+   brasão ou foto de passaporte (clichês do nicho, proibidos).
+
+   White-label: para outro advogado, troca-se SÓ este bloco
+   :root (cores/fontes) + src/lib/marca.ts + src/variantes/*.
+   Contraste verificado (WCAG AA):
+     tinta   #1E2433 sobre papel #F6F2EA  ≈ 13.0:1
+     tinta-2 #4C5364 sobre papel          ≈  7.0:1
+     branco  sobre lacre #9E2B25          ≈  7.4:1
+     papel   sobre arquivo #232A3B        ≈ 11.4:1
+   ============================================================ */
+
+:root {
+  /* papel: fundo quente de certidão, nunca branco puro */
+  --papel: #f6f2ea;
+  --papel-2: #fdfbf6; /* ficha/cartão sobre o papel */
+  --papel-3: #efe9dc; /* faixa de apoio */
+
+  /* tinta: azul-preto de caneta de registro (conteúdo) */
+  --tinta: #1e2433;
+  --tinta-2: #4c5364;
+  --tinta-3: #667085; /* metadado; só em texto ≥14px */
+
+  /* lacre: a ÚNICA cor de ação. Escassa por design. */
+  --lacre: #9e2b25;
+  --lacre-2: #7e1f1a; /* hover/pressionado */
+  --lacre-suave: #f2e3df; /* fundo de chip/realce */
+
+  /* arquivo: seção escura (tinta profunda), texto em papel */
+  --arquivo: #232a3b;
+  --arquivo-2: #2c3448;
+
+  /* selo verde: só para "caminho aberto" no resultado do quiz */
+  --selo: #3e5c4b;
+
+  --linha: #dcd4c3; /* hairline de ficha */
+  --linha-forte: #b9ae97;
+
+  /* tipografia (injetada pelo next/font no layout) */
+  --fonte-titulo: var(--font-newsreader), "Newsreader", georgia, serif;
+  --fonte-texto: var(--font-archivo), "Archivo", "Helvetica Neue", arial, sans-serif;
+
+  --raio: 3px; /* documentos têm canto quase reto */
+  --sombra-ficha: 0 1px 2px rgba(30, 36, 51, 0.06), 0 12px 32px rgba(30, 36, 51, 0.08);
+  --largura: 1100px;
+}
+
+/* ---------- reset curto ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* clip não cria scroll container (preserva sticky), e mata overflow-x */
+  overflow-x: clip;
+}
+
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  /* grão de papel: dois gradientes quase invisíveis, custo zero */
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(185, 174, 151, 0.14), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(30, 36, 51, 0.012) 0 1px, transparent 1px 3px);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--lacre);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lacre);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ---------- utilitários ---------- */
+.wrap {
+  max-width: var(--largura);
+  margin-inline: auto;
+  padding-inline: clamp(18px, 4.5vw, 40px);
+}
+
+/* título editorial: serif com eixo óptico alto */
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-optical-sizing: auto;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* etiqueta de fichário: o "kicker" desta identidade */
+.etiqueta {
+  font-family: var(--fonte-texto);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--tinta-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.etiqueta::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--linha-forte);
+}
+
+/* parágrafo de seção com § (sabor de texto legal, sem pompa) */
+.paragrafo-num {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  color: var(--tinta-3);
+}
+
+/* botão de ação: lacre, canto reto, sem gradiente */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: var(--raio);
+  padding: 15px 26px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.06s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-lacre {
+  background: var(--lacre);
+  color: #fff;
+}
+
+.btn-lacre:hover {
+  background: var(--lacre-2);
+}
+
+.btn-contorno {
+  background: transparent;
+  color: var(--tinta);
+  border-color: var(--linha-forte);
+}
+
+.btn-contorno:hover {
+  border-color: var(--tinta);
+}
+
+/* linha de ficha: hairline com respiro */
+.ficha-linha {
+  border: 0;
+  border-top: 1px solid var(--linha);
+  margin: 0;
+}
+
+/* ---------- revelação no scroll (progressive enhancement) ----------
+   Sem JS, tudo visível. Com JS (html.js), entra com fade sutil. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+html.js [data-reveal].on {
+  opacity: 1;
+  transform: none;
+}
+
+html.js [data-reveal="1"] {
+  transition-delay: 0.08s;
+}
+
+html.js [data-reveal="2"] {
+  transition-delay: 0.16s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

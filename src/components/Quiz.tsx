@@ -1,0 +1,166 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { ga4Event } from "@/lib/analytics";
+import { publicarResultado, type RespostaQuiz } from "@/lib/eventos";
+import type { ResultadoDef, Variante } from "@/variantes/tipos";
+import s from "./Quiz.module.css";
+
+type Fase = "perguntas" | "urgencia" | "resultado";
+
+/**
+ * Ficha de análise: uma pergunta por vez, resultado honesto no fim.
+ * O resultado personaliza a seção do vídeo e viaja no payload do lead
+ * (via CustomEvent + sessionStorage — ver src/lib/eventos.ts).
+ * Quem cai em "provavelmente sem direito" NÃO é empurrado pro WhatsApp.
+ */
+export default function Quiz({ variante }: { variante: Variante }) {
+  const { quiz, slug } = variante;
+  const [fase, setFase] = useState<Fase>("perguntas");
+  const [indice, setIndice] = useState(0);
+  const [respostas, setRespostas] = useState<Record<string, string>>({});
+
+  const resultado: ResultadoDef | null = useMemo(() => {
+    if (fase !== "resultado") return null;
+    const id = quiz.avaliar(respostas);
+    return quiz.resultados.find((r) => r.id === id) ?? null;
+  }, [fase, quiz, respostas]);
+
+  const total = quiz.perguntas.length + 1; // + urgência
+  const passo = fase === "perguntas" ? indice + 1 : total;
+
+  function responder(perguntaId: string, valor: string) {
+    const proximas = { ...respostas, [perguntaId]: valor };
+    setRespostas(proximas);
+    if (indice + 1 < quiz.perguntas.length) {
+      setIndice(indice + 1);
+    } else {
+      setFase("urgencia");
+    }
+  }
+
+  function responderUrgencia(valor: string) {
+    const id = quiz.avaliar(respostas);
+    const def = quiz.resultados.find((r) => r.id === id);
+    const detalhadas: RespostaQuiz[] = quiz.perguntas.map((p) => ({
+      pergunta: p.id,
+      resposta: respostas[p.id] ?? "",
+    }));
+    detalhadas.push({ pergunta: quiz.urgencia.id, resposta: valor });
+    publicarResultado(slug, {
+      id,
+      titulo: def?.titulo ?? id,
+      respostas: detalhadas,
+    });
+    ga4Event("quiz_resultado", { cidadania: variante.idPayload, resultado: id, urgencia: valor });
+    setFase("resultado");
+  }
+
+  function voltar() {
+    if (fase === "urgencia") {
+      setFase("perguntas");
+      setIndice(quiz.perguntas.length - 1);
+    } else if (indice > 0) {
+      setIndice(indice - 1);
+    }
+  }
+
+  function refazer() {
+    setRespostas({});
+    setIndice(0);
+    setFase("perguntas");
+  }
+
+  const pergunta = fase === "perguntas" ? quiz.perguntas[indice] : quiz.urgencia;
+
+  return (
+    <section id="verificar" className={s.secao}>
+      <div className="wrap">
+        <div className={s.cabeca} data-reveal>
+          <p className="etiqueta">{quiz.etiqueta}</p>
+          <h2 className={`titulo ${s.h2}`}>{quiz.titulo}</h2>
+          <p className={s.sub}>{quiz.sub}</p>
+        </div>
+
+        <div className={s.ficha} data-reveal="1">
+          {fase !== "resultado" ? (
+            <>
+              <div className={s.progresso}>
+                <span className={s.progressoRotulo}>
+                  Pergunta {passo} de {total}
+                </span>
+                <span className={s.progressoBarra} aria-hidden="true">
+                  <i style={{ width: `${(passo / total) * 100}%` }} />
+                </span>
+              </div>
+
+              <p className={s.pergunta}>{pergunta.pergunta}</p>
+              {pergunta.ajuda && <p className={s.ajuda}>{pergunta.ajuda}</p>}
+
+              <div className={s.opcoes}>
+                {pergunta.opcoes.map((o) => (
+                  <button
+                    key={o.valor}
+                    type="button"
+                    className={s.opcao}
+                    onClick={() =>
+                      fase === "urgencia"
+                        ? responderUrgencia(o.valor)
+                        : responder(pergunta.id, o.valor)
+                    }
+                  >
+                    <span>{o.rotulo}</span>
+                    {o.ajuda && <small>{o.ajuda}</small>}
+                  </button>
+                ))}
+              </div>
+
+              {(indice > 0 || fase === "urgencia") && (
+                <button type="button" className={s.voltar} onClick={voltar}>
+                  ‹ voltar
+                </button>
+              )}
+            </>
+          ) : (
+            resultado && (
+              <div className={s.resultado}>
+                <p
+                  className={`${s.selo} ${
+                    resultado.tom === "aberto"
+                      ? s.seloAberto
+                      : resultado.tom === "atencao"
+                        ? s.seloAtencao
+                        : s.seloNegativo
+                  }`}
+                >
+                  {resultado.titulo}
+                </p>
+                <p className={s.resultadoTexto}>{resultado.texto}</p>
+
+                {resultado.segueFunil ? (
+                  <div className={s.resultadoAcoes}>
+                    <a className="btn btn-lacre" href="#analise">
+                      Entender meu caminho ▸
+                    </a>
+                    <p className={s.resultadoNota}>
+                      Seu resultado segue junto quando você pedir a análise, sem
+                      repetir nada.
+                    </p>
+                  </div>
+                ) : (
+                  resultado.orientacao && (
+                    <p className={s.orientacao}>{resultado.orientacao}</p>
+                  )
+                )}
+
+                <button type="button" className={s.voltar} onClick={refazer}>
+                  refazer o teste
+                </button>
+              </div>
+            )
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}

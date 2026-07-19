@@ -1,0 +1,81 @@
+.secao {
+  padding-block: clamp(56px, 8vw, 96px);
+  border-top: 1px solid var(--linha);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.4fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+
+.retrato {
+  margin: 0;
+  position: sticky;
+  top: 90px;
+}
+
+.fotoPlaceholder {
+  aspect-ratio: 4 / 5;
+  background:
+    radial-gradient(400px 300px at 30% 20%, rgba(158, 43, 37, 0.1), transparent 60%),
+    var(--arquivo);
+  border-radius: var(--raio);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--linha);
+  box-shadow: var(--sombra-ficha);
+}
+
+.fotoPlaceholder span {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: 64px;
+  color: rgba(246, 242, 234, 0.35);
+}
+
+.legenda {
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--tinta-3);
+}
+
+.h2 {
+  font-size: clamp(28px, 3.6vw, 40px);
+  margin-top: 16px;
+  max-width: 18ch;
+}
+
+.texto {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 60ch;
+}
+
+.texto p {
+  color: var(--tinta-2);
+  font-size: 16.5px;
+}
+
+.texto p:first-child {
+  color: var(--tinta);
+  font-size: 17.5px;
+}
+
+@media (max-width: 780px) {
+  .grade {
+    grid-template-columns: 1fr;
+  }
+
+  .retrato {
+    position: static;
+    max-width: 300px;
+  }
+}

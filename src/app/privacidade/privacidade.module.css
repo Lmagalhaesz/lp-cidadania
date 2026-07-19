@@ -1,0 +1,42 @@
+.pagina {
+  padding-block: clamp(48px, 8vw, 88px);
+  max-width: 760px;
+}
+
+.h1 {
+  font-size: clamp(30px, 4.4vw, 44px);
+  margin-top: 16px;
+}
+
+.atualizado {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--tinta-3);
+}
+
+.corpo {
+  margin-top: 36px;
+}
+
+.corpo h2 {
+  font-family: var(--fonte-texto);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 32px 0 10px;
+  color: var(--tinta);
+}
+
+.corpo p {
+  color: var(--tinta-2);
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.voltar {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 14px;
+  color: var(--tinta-2);
+}

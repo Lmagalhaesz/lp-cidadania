@@ -1,0 +1,62 @@
+.rodape {
+  background: var(--arquivo);
+  color: var(--papel);
+  margin-top: 0;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  padding-block: 56px 48px;
+}
+
+.wordmark {
+  font-family: var(--fonte-titulo);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.descritor {
+  margin-top: 6px;
+  color: rgba(246, 242, 234, 0.75);
+  font-size: 15px;
+}
+
+.meta {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(246, 242, 234, 0.55);
+}
+
+.colunaLegal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.aviso {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(246, 242, 234, 0.65);
+}
+
+.link {
+  font-size: 13.5px;
+  color: rgba(246, 242, 234, 0.85);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  width: fit-content;
+}
+
+@media (max-width: 720px) {
+  .grade {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding-block: 44px 40px;
+  }
+}
