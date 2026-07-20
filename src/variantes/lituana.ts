@@ -19,22 +19,34 @@ export const lituana: Variante = {
   },
 
   hero: {
-    etiqueta: "Cidadania lituana · análise de elegibilidade",
-    titulo: "Sua família saiu da Lituânia. {destaque}",
-    tituloDestaque: "O direito de voltar continua no seu nome.",
-    sub: "A lei lituana permite restaurar a cidadania de quem era cidadão antes de 1940, até a geração dos bisnetos. Na emigração clássica ao Brasil, você mantém a cidadania brasileira. É um direito registrado em certidões dos anos 1930, e quase nenhuma família brasileira sabe que tem. Veja em 2 minutos se a sua linha se encaixa.",
+    etiqueta: "Descendentes de lituanos no Brasil",
+    titulo: "Descubra em 2 minutos se você tem direito à {destaque}",
+    tituloDestaque: "cidadania lituana.",
+    sub: "Até bisneto de quem saiu da Lituânia pode restaurar a cidadania. E no caso clássico da imigração ao Brasil, sem abrir mão da cidadania brasileira. Responda três perguntas sobre a sua família e veja na hora onde a sua linha se encaixa.",
+    bullets: [
+      "Resultado na hora, baseado na lei lituana em vigor",
+      "Sem cadastro e sem custo pra descobrir",
+      "Quem analisa seu caso depois é advogado, não robô",
+    ],
     fato: {
       texto:
         "Lei da Cidadania da Lituânia (XI-1196, art. 9): cidadão de antes de 15/06/1940 e seus filhos, netos e bisnetos podem restaurar a cidadania. Quem saiu do país antes de 11/03/1990, e seus descendentes, não precisa renunciar à brasileira.",
-      fonte: "e-seimas.lrs.lt (lei consolidada) · migracija.lt, Departamento de Migração",
+      fonte: "e-seimas.lrs.lt · migracija.lt, Departamento de Migração",
     },
-    ctaQuiz: "Verificar meu direito",
+    ctaQuiz: "Fazer o teste",
   },
 
+  marquee: [
+    "Até bisneto tem direito",
+    "Dupla cidadania preservada",
+    "Lei XI-1196 em vigor",
+    "Taxa oficial de 120 euros",
+    "Exame em até 12 meses",
+    "Emigração pré-1990 preserva a brasileira",
+  ],
+
   quiz: {
-    etiqueta: "Teste de elegibilidade",
-    titulo: "Sua linha familiar chega na cidadania?",
-    sub: "Três perguntas sobre a história da sua família. Resultado na hora, honesto: se a linha não alcançar, você fica sabendo aqui, de graça.",
+    etiqueta: "Teste de elegibilidade · 2 minutos",
     perguntas: [
       {
         id: "ascendente",
@@ -94,8 +106,17 @@ export const lituana: Variante = {
         id: "restauracao-dupla",
         titulo: "Restauração com dupla cidadania provável",
         texto:
-          "Sua linha se encaixa no desenho clássico da lei: descendente até bisneto de cidadão pré-1940 que emigrou antes de 1990. Nesse perfil, a lei dispensa a renúncia: você restaura a cidadania lituana e segue brasileiro. O trabalho é documental: provar a cidadania do antepassado e amarrar as gerações até você, com apoio dos arquivos lituanos quando faltar papel no Brasil.",
+          "Sua linha se encaixa no desenho clássico da lei: descendente até bisneto de cidadão pré-1940 que emigrou antes de 1990. Nesse perfil, a lei dispensa a renúncia: você restaura a cidadania lituana e segue brasileiro. E o documento que a sua família guardou é exatamente o tipo de prova que a lei aceita; o resto se amarra com as certidões de cada geração.",
         chamadaVsl: "Sua linha parece alcançar a restauração. Veja como o processo funciona de verdade.",
+        tom: "aberto",
+        segueFunil: true,
+      },
+      {
+        id: "restauracao-dupla-arquivo",
+        titulo: "Restauração provável, começando pelo arquivo",
+        texto:
+          "Sua linha se encaixa no desenho clássico da lei: descendente até bisneto de cidadão pré-1940 que emigrou antes de 1990, com direito de seguir brasileiro. Como a família guardou pouco papel, o processo começa nos arquivos estatais da Lituânia, que mantêm registros de passaporte, residência e emigração do período. É a etapa que define o resto, e é onde a condução técnica mais pesa.",
+        chamadaVsl: "Sua linha parece alcançar a restauração, começando pelos arquivos. Veja como funciona.",
         tom: "aberto",
         segueFunil: true,
       },
@@ -141,7 +162,10 @@ export const lituana: Variante = {
     avaliar: (r) => {
       if (r.ascendente === "ninguem") return "sem-direito";
       if (r.ascendente === "trisavo") return "familia";
-      if (r.saida === "emigrou" || r.saida === "deportado") return "restauracao-dupla";
+      if (r.saida === "emigrou" || r.saida === "deportado") {
+        // a resposta sobre documentos personaliza o ponto de partida
+        return r.documentos === "nada" ? "restauracao-dupla-arquivo" : "restauracao-dupla";
+      }
       if (r.saida === "urss") return "restauracao-analise";
       return "pesquisa-arquivo";
     },
@@ -210,7 +234,7 @@ export const lituana: Variante = {
     {
       pergunta: "Quanto custa o processo?",
       resposta:
-        "A taxa oficial do pedido de restauração é de 120 euros. O custo total depende do caso: busca em arquivo, certidões, apostilamento, tradução juramentada para o lituano e os honorários, apresentados por escrito depois da análise dos documentos, antes de qualquer contratação.",
+        "A taxa oficial do pedido de restauração informada pelo governo lituano é de 120 euros (valor sujeito a atualização; confirmamos o vigente na análise). O custo total depende do caso: busca em arquivo, certidões, apostilamento, tradução juramentada para o lituano e os honorários, apresentados por escrito depois da análise dos documentos, antes de qualquer contratação.",
     },
     {
       pergunta: "Quanto tempo leva?",

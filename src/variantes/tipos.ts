@@ -80,19 +80,24 @@ export type Variante = {
 
   hero: {
     etiqueta: string;
+    /** manchete DIRETA: a promessa é descobrir o direito, não a aula de lei */
     titulo: string;
     /** trecho do título destacado em itálico serif */
     tituloDestaque: string;
     sub: string;
-    /** o concreto REAL da dobra: dado de lei com fonte */
+    /** 3 provas curtas sob a manchete (na hora, grátis, advogado) */
+    bullets: string[];
+    /** o concreto REAL da dobra: dado de lei com fonte (vira nota de apoio) */
     fato: { texto: string; fonte: string };
     ctaQuiz: string;
   };
 
+  /** fatos curtos da faixa em movimento sob o hero (5-6 itens) */
+  marquee: string[];
+
   quiz: {
+    /** rótulo no topo da ficha do teste (ex. "Teste de elegibilidade") */
     etiqueta: string;
-    titulo: string;
-    sub: string;
     perguntas: PerguntaQuiz[];
     /** pergunta de urgência (não afeta elegibilidade; vai no payload) */
     urgencia: PerguntaQuiz;

@@ -53,9 +53,10 @@ o que muda é o bloco [MIOLO-PAÍS] e o gancho de abertura. Duração alvo:
 
 > Meu nome é Gustavo Ribeiro, sou advogado em Campinas, inscrito na OAB
 > [VALIDAR COM ADVOGADO: número e seccional].
-> Hoje, todos os processos de cidadania de uma operação especializada em
-> nacionalidade passam pela minha mão. Da análise da primeira certidão até a
-> decisão final, quem conduz sou eu.
+> Processo de cidadania é o meu dia a dia. Cada caso que eu aceito, eu
+> conduzo pessoalmente: da análise da primeira certidão até a decisão final.
+> [NOTA DE COMPLIANCE, ver VALIDACOES.md: não citar a assessoria nem
+> estrutura societária até o arranjo ser validado juridicamente.]
 > [VALIDAR COM ADVOGADO: quantos processos já conduziu, de quais países.
 > Se houver número confirmado, entra aqui: "já conduzi X processos". Sem
 > número confirmado, esta linha NÃO entra.]

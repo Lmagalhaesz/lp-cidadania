@@ -1,17 +1,23 @@
+import Quiz from "@/components/Quiz";
 import type { Variante } from "@/variantes/tipos";
 import s from "./Hero.module.css";
 
 /**
- * Dobra editorial: título serif com destaque em itálico, um concreto REAL
- * (dado de lei com fonte, no estilo de nota de certidão) e uma única ação:
- * verificar o direito no quiz logo abaixo.
+ * Dobra de conversão: manchete direta ("descubra se você tem direito") e o
+ * QUIZ embutido, com a primeira pergunta visível já no carregamento. Sem
+ * clique pra começar: o micro-compromisso abre a página. O dado de lei vira
+ * nota de apoio sob a manchete, não manchete.
  */
 export default function Hero({ variante }: { variante: Variante }) {
-  const { hero, pais } = variante;
+  const { hero } = variante;
   const [antes, depois] = hero.titulo.split("{destaque}");
 
   return (
     <section className={s.dobra}>
+      {/* marca d'água tipográfica do país: cenografia de arquivo, não decoração */}
+      <span aria-hidden="true" className={s.marcaDagua}>
+        {variante.pais}
+      </span>
       <div className={`wrap ${s.grade}`}>
         <div className={s.colTexto}>
           <p className="etiqueta" data-reveal>
@@ -25,20 +31,21 @@ export default function Hero({ variante }: { variante: Variante }) {
           <p className={s.sub} data-reveal="2">
             {hero.sub}
           </p>
-          <div className={s.acoes} data-reveal="2">
-            <a className="btn btn-lacre" href="#verificar">
-              {hero.ctaQuiz}
-            </a>
-            <span className={s.acaoNota}>2 minutos · sem cadastro</span>
-          </div>
+          <ul className={s.provas} data-reveal="2">
+            {hero.bullets.map((b) => (
+              <li key={b}>{b}</li>
+            ))}
+          </ul>
         </div>
 
-        <aside className={s.ficha} data-reveal="2" aria-label={`Base legal, ${pais}`}>
-          <p className={s.fichaRotulo}>Base legal</p>
-          <p className={s.fichaTexto}>{hero.fato.texto}</p>
-          <hr className="ficha-linha" />
-          <p className={s.fichaFonte}>{hero.fato.fonte}</p>
-        </aside>
+        <div className={s.colQuiz} data-reveal="1">
+          <Quiz slug={variante.slug} />
+        </div>
+
+        <p className={s.fato} data-reveal="2">
+          <span className={s.fatoRotulo}>Base legal</span> {hero.fato.texto}{" "}
+          <span className={s.fatoFonte}>({hero.fato.fonte})</span>
+        </p>
       </div>
     </section>
   );

@@ -75,10 +75,24 @@ body {
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  /* grão de papel: dois gradientes quase invisíveis, custo zero */
+  /* grão de papel + pauta de livro-caixa: gradientes, custo zero */
   background-image:
     radial-gradient(1200px 600px at 80% -10%, rgba(185, 174, 151, 0.14), transparent 60%),
     repeating-linear-gradient(0deg, rgba(30, 36, 51, 0.012) 0 1px, transparent 1px 3px);
+  position: relative;
+}
+
+/* margem de livro-caixa: a linha vermelha vertical que assina o "dossiê" */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: clamp(10px, 3vw, 34px);
+  width: 1px;
+  background: color-mix(in srgb, var(--lacre) 26%, transparent);
+  pointer-events: none;
+  z-index: 60;
 }
 
 img,
@@ -243,5 +257,56 @@ html.js [data-reveal="2"] {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* carimbo batendo: usado no selo de resultado do quiz */
+@keyframes carimbar {
+  0% {
+    opacity: 0;
+    transform: scale(1.7) rotate(-7deg);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(0.96) rotate(-1.2deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(-1.2deg);
+  }
+}
+
+/* anel pulsando: chama o clique no play do vídeo */
+@keyframes pulsarAnel {
+  0% {
+    box-shadow: 0 0 0 0 rgba(158, 43, 37, 0.45);
+  }
+
+  70% {
+    box-shadow: 0 0 0 22px rgba(158, 43, 37, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(158, 43, 37, 0);
+  }
+}
+
+/* faixa de fatos em movimento */
+@keyframes correr {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }

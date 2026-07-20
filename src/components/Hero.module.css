@@ -1,23 +1,44 @@
 .dobra {
-  padding-block: clamp(56px, 9vw, 110px) clamp(40px, 6vw, 72px);
+  padding-block: clamp(36px, 6vw, 72px) clamp(40px, 6vw, 72px);
   position: relative;
+  overflow: clip;
+}
+
+/* nome do país gigante, contorno quase invisível: profundidade de arquivo */
+.marcaDagua {
+  position: absolute;
+  top: clamp(-30px, -2vw, -10px);
+  right: -0.08em;
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(120px, 22vw, 300px);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(30, 36, 51, 0.07);
+  user-select: none;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
 .grade {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr);
-  gap: clamp(32px, 5vw, 72px);
-  align-items: end;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 1fr);
+  gap: clamp(28px, 4.5vw, 64px);
+  align-items: start;
 }
 
 .colTexto {
   min-width: 0;
+  padding-top: 8px;
 }
 
 .h1 {
-  font-size: clamp(34px, 5.6vw, 62px);
-  margin-top: 20px;
-  max-width: 15ch;
+  font-size: clamp(36px, 5.2vw, 64px);
+  margin-top: 18px;
+  max-width: 16ch;
+  position: relative;
+  z-index: 1;
 }
 
 .destaque {
@@ -27,81 +48,84 @@
 }
 
 .sub {
-  margin-top: 22px;
-  font-size: clamp(17px, 1.9vw, 19px);
+  margin-top: 18px;
+  font-size: clamp(16.5px, 1.8vw, 18px);
   color: var(--tinta-2);
-  max-width: 54ch;
+  max-width: 50ch;
 }
 
-.acoes {
-  margin-top: 34px;
+/* provas curtas: riscos de lacre, mesmo desenho do filtro */
+.provas {
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
   display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 9px;
 }
 
-.acaoNota {
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--tinta-3);
-}
-
-/* ficha de base legal: o "concreto real" da dobra, em forma de documento */
-.ficha {
-  background: var(--papel-2);
-  border: 1px solid var(--linha);
-  border-radius: var(--raio);
-  box-shadow: var(--sombra-ficha);
-  padding: 24px 24px 18px;
+.provas li {
   position: relative;
+  padding-left: 26px;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-/* furo de fichário */
-.ficha::before {
+.provas li::before {
   content: "";
   position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid var(--linha-forte);
-  border-radius: 50%;
+  left: 0;
+  top: 11px;
+  width: 14px;
+  height: 2px;
+  background: var(--lacre);
 }
 
-.fichaRotulo {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--lacre);
-}
-
-.fichaTexto {
-  margin-top: 12px;
-  font-family: var(--fonte-titulo);
-  font-size: 18.5px;
-  line-height: 1.45;
-}
-
-.ficha hr {
-  margin-block: 14px 10px;
-}
-
-.fichaFonte {
-  font-size: 12px;
-  letter-spacing: 0.05em;
+/* base legal: nota de rodapé da dobra, credibilidade sem virar aula.
+   No desktop ocupa a coluna do texto; no mobile vem depois do quiz. */
+.fato {
+  grid-column: 1;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--linha);
+  font-size: 12.5px;
+  line-height: 1.6;
   color: var(--tinta-3);
+  max-width: 52ch;
 }
 
-@media (max-width: 860px) {
+.fatoRotulo {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 10.5px;
+  color: var(--lacre);
+  margin-right: 6px;
+}
+
+.fatoFonte {
+  letter-spacing: 0.02em;
+}
+
+.colQuiz {
+  position: sticky;
+  top: 84px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+@media (max-width: 900px) {
   .grade {
     grid-template-columns: 1fr;
-    align-items: start;
   }
 
-  .ficha {
-    max-width: 480px;
+  .colQuiz {
+    position: static;
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .fato {
+    margin-top: 0;
   }
 }

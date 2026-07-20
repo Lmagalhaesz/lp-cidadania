@@ -21,22 +21,34 @@ export const portuguesa: Variante = {
   },
 
   hero: {
-    etiqueta: "Nacionalidade portuguesa · análise de elegibilidade",
-    titulo: "A lei portuguesa mudou em maio de 2026. {destaque}",
-    tituloDestaque: "Quem protocola hoje trava a regra de hoje.",
-    sub: "Neto de português agora enfrenta teste de língua e cultura e análise do Ministério Público. A via dos sefarditas acabou. E a fila de pedidos soma centenas de milhares. Nada disso apaga o seu direito. Só muda o custo de protocolar errado, ou tarde. Comece vendo qual é o seu caso.",
+    etiqueta: "Descendentes de portugueses no Brasil",
+    titulo: "Descubra se você ainda tem direito à {destaque}",
+    tituloDestaque: "nacionalidade portuguesa.",
+    sub: "A lei mudou em 19 de maio de 2026: neto ganhou teste e crivo, a via dos sefarditas acabou. Filho segue com via direta e bisneto tem rota em duas etapas. Responda até quatro perguntas e veja na hora qual regra vale pro seu caso.",
+    bullets: [
+      "Resultado na hora, já pela lei nova de 2026",
+      "Sem cadastro e sem custo pra descobrir",
+      "Quem analisa seu caso depois é advogado, não robô",
+    ],
     fato: {
       texto:
         "Lei Orgânica nº 1/2026, em vigor desde 19/05/2026: filho de português segue com atribuição direta; neto passou a cumprir também os requisitos do art. 6.º (língua, cultura, idoneidade). Processos já protocolados seguem a lei antiga.",
       fonte: "Diário da República n.º 95/2026, 1.ª série · Lei 37/81 republicada",
     },
-    ctaQuiz: "Verificar meu direito",
+    ctaQuiz: "Fazer o teste",
   },
 
+  marquee: [
+    "Lei nova desde 19/05/2026",
+    "Filho: via direta intacta",
+    "Neto: régua nova",
+    "Bisneto: rota em duas etapas",
+    "Protocolo trava a regra do dia",
+    "Emolumento oficial: 175 euros",
+  ],
+
   quiz: {
-    etiqueta: "Teste de elegibilidade",
-    titulo: "Qual porta a lei nova deixou aberta pra você",
-    sub: "Até quatro perguntas sobre a sua família. Resultado na hora, honesto: se a lei não der caminho, você ouve isso aqui, de graça.",
+    etiqueta: "Teste de elegibilidade · 2 minutos",
     perguntas: [
       {
         id: "ascendente",

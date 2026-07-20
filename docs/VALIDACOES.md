@@ -17,11 +17,18 @@ pago) · [M] = médio (conferir na primeira revisão)
   e que o Gustavo atende nele.
 - [A] **Cidade**: assumimos Campinas, SP ("Campinhas" na entrevista foi lido
   como typo). Aparece no rodapé, JSON-LD e privacidade.
-- [A] **Credencial usada na copy** (`src/components/Advogado.tsx`, bloco 2 do
-  VSL): "conduz, hoje, todos os processos de cidadania de uma operação
-  especializada em nacionalidade". É o que a entrevista sustenta. Validar a
-  formulação com o Gustavo (a assessoria permite? contrato de parceria tem
-  cláusula de sigilo/não-concorrência?).
+- [B] **Compliance do arranjo com a assessoria** (apontado pelo revisor
+  jurídico adversarial): o Gustavo atua como parceiro de uma assessoria e a
+  LP capta em nome DELE. Antes do go-live, validar juridicamente: quem capta
+  é o advogado (ok) ou a estrutura configura captação por interposta pessoa
+  (art. 34, IV, EAOAB)? A remuneração da parceria é por serviço (ok) ou
+  vinculada a caso/êxito com não-advogado (vedada, art. 40 CE)? A copy atual
+  já foi neutralizada ("cada caso que aceita, ele conduz pessoalmente") e NÃO
+  cita a assessoria; manter assim até essa decisão.
+- [A] **Formato da faixa animada de fatos e do funil WhatsApp pré-preenchido**:
+  conteúdo é factual, mas o revisor jurídico registrou risco de leitura de
+  "mercantilização" pela seccional (arts. 39/44 CE). Colher o de acordo do
+  Gustavo sobre o formato; remover a animação é mudança de uma linha de CSS.
 - [A] **Número de casos**: NÃO usado em lugar nenhum (não confirmado).
   Se o Gustavo trouxer número real por país, atualizar VSL bloco 2 e a seção
   Advogado. Enquanto isso, a faixa "2 meses a 2 anos" é a única métrica usada
@@ -67,6 +74,10 @@ pago) · [M] = médio (conferir na primeira revisão)
 - [A] **Emolumentos €175/€250/grátis menor** (FAQ): tabela IRN. Confirmar.
 - [M] Casamento/união: regra dos 3/6 anos + reconhecimento judicial de união
   de facto (quiz conjuge). Confirmar.
+- [M] "Laços de efetiva ligação à comunidade nacional" no resultado do neto:
+  o revisor adversarial sugeriu remoção, mas o texto vigente do art. 1.º/1/d
+  (PGD Lisboa, pós-LO 1/2026) MANTÉM a expressão. Mantido na copy; confirmar
+  leitura com o Gustavo.
 
 ## 4. Italiana (docs/pesquisa/italiana.md)
 

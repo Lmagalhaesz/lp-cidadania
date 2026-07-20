@@ -97,6 +97,10 @@ async function detectarOverflow(page) {
       problemas.push(`documento com scroll horizontal: ${larguraDoc}px > ${window.innerWidth}px`);
     }
     for (const el of document.querySelectorAll("body *")) {
+      /* decorativos (aria-hidden) clipados pelo ancestral não geram scroll:
+         a marca d'água do hero vive além da viewport DE PROPÓSITO. O check
+         de scrollWidth do documento acima pega qualquer vazamento real. */
+      if (el.closest("[aria-hidden='true']")) continue;
       const r = el.getBoundingClientRect();
       if (r.width > 0 && (r.right > window.innerWidth + 1 || r.left < -1)) {
         const id = el.className && typeof el.className === "string"

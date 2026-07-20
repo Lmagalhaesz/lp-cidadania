@@ -88,16 +88,11 @@ export default function Quiz({ slug }: { slug: string }) {
   const pergunta = fase === "perguntas" ? visiveis[indice] : quiz.urgencia;
 
   return (
-    <section id="verificar" className={s.secao}>
-      <div className="wrap">
-        <div className={s.cabeca} data-reveal>
-          <p className="etiqueta">{quiz.etiqueta}</p>
-          <h2 className={`titulo ${s.h2}`}>{quiz.titulo}</h2>
-          <p className={s.sub}>{quiz.sub}</p>
-        </div>
-
-        <div className={s.ficha} data-reveal="1">
-          {fase !== "resultado" ? (
+    <div id="verificar" className={s.ficha}>
+      <div className={s.cabecalhoFicha}>
+        <p className={s.rotuloFicha}>{quiz.etiqueta}</p>
+      </div>
+      {fase !== "resultado" ? (
             <>
               <div className={s.progresso}>
                 <span className={s.progressoRotulo}>
@@ -154,7 +149,7 @@ export default function Quiz({ slug }: { slug: string }) {
                 {resultado.segueFunil ? (
                   <div className={s.resultadoAcoes}>
                     <a className="btn btn-lacre" href="#analise">
-                      Entender meu caminho ▸
+                      Assistir à análise do meu caso ▸
                     </a>
                     <p className={s.resultadoNota}>
                       Seu resultado segue junto quando você pedir a análise, sem
@@ -173,8 +168,6 @@ export default function Quiz({ slug }: { slug: string }) {
               </div>
             )
           )}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 }

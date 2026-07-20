@@ -30,9 +30,9 @@ export default function Advogado({ variante }: { variante: Variante }) {
           <div className={s.texto}>
             <p>
               Quem analisa seu caso é quem assina: {MARCA.tratamento},{" "}
-              {MARCA.oab}, de {MARCA.cidade}. É ele quem conduz, hoje, todos os
-              processos de {variante.cidadania} de uma operação especializada em
-              nacionalidade, da análise do primeiro documento ao desfecho.
+              {MARCA.oab}, de {MARCA.cidade}. Processo de{" "}
+              {variante.cidadania} é o dia a dia dele: cada caso que aceita, ele
+              conduz pessoalmente, da análise do primeiro documento ao desfecho.
             </p>
             <p>
               Processo de cidadania não tem atalho honesto. Nos casos que ele

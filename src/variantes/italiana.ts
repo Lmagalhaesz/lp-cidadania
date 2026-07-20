@@ -20,23 +20,35 @@ export const italiana: Variante = {
   },
 
   hero: {
-    etiqueta: "Cidadania italiana · análise de elegibilidade",
-    titulo: "A lei da cidadania italiana mudou. {destaque}",
-    tituloDestaque: "O seu direito pode ter sobrevivido.",
-    sub: "Desde 2025, o reconhecimento automático parou nos filhos e netos de italiano. Bisneto virou, em regra, caso judicial. Muita assessoria segue vendendo o processo antigo como se nada tivesse acontecido. Antes de pagar qualquer coisa a alguém, veja em 2 minutos onde o seu caso caiu nesse novo mapa.",
+    etiqueta: "Descendentes de italianos no Brasil",
+    titulo: "Descubra se você ainda tem direito à {destaque}depois da nova lei.",
+    tituloDestaque: "cidadania italiana ",
+    sub: "Desde 2025, a via administrativa parou nos filhos e netos de italiano. Bisneto virou, em regra, caso judicial. Muita assessoria segue vendendo o processo antigo como se nada tivesse acontecido. Responda até cinco perguntas e veja na hora em qual grupo o seu caso caiu.",
+    bullets: [
+      "Resultado na hora, já pela Lei 74/2025",
+      "Sem cadastro e sem custo pra descobrir",
+      "Quem analisa seu caso depois é advogado habilitado, não assessoria",
+    ],
     fato: {
       texto:
         "Lei nº 74, de 23 de maio de 2025 (art. 3-bis): pedidos novos, em regra, só para filho ou neto de cidadão exclusivamente italiano. Quem protocolou até 27/03/2025, 23h59 de Roma, mantém a regra antiga.",
       fonte:
         "Gazzetta Ufficiale n. 118/2025 · Corte Constitucional, Sentença 63/2026",
     },
-    ctaQuiz: "Verificar meu direito",
+    ctaQuiz: "Fazer o teste",
   },
 
+  marquee: [
+    "Lei 74/2025 em vigor",
+    "Corte: 27/03/2025, 23h59 de Roma",
+    "Filho e neto: via aberta",
+    "Bisneto: via judicial",
+    "Sentença 63/2026 julgada",
+    "Taxa consular: 600 euros",
+  ],
+
   quiz: {
-    etiqueta: "Teste de elegibilidade",
-    titulo: "Onde o seu caso caiu no novo mapa da lei",
-    sub: "Cinco perguntas, respostas da sua história de família. O resultado sai na hora e é honesto: se não houver caminho, você fica sabendo aqui, de graça.",
+    etiqueta: "Teste de elegibilidade · 2 minutos",
     perguntas: [
       {
         id: "protocolo",
@@ -67,12 +79,12 @@ export const italiana: Variante = {
       {
         id: "naturalizacao",
         pergunta:
-          "Esse seu pai, mãe, avô ou avó italiano chegou a se naturalizar brasileiro em algum momento da vida?",
+          "Esse seu pai, mãe, avô ou avó italiano chegou a se naturalizar em outro país (Brasil ou qualquer outro)?",
         ajuda: "A lei nova exige que o ascendente tenha tido somente a cidadania italiana.",
         mostrarSe: (r) => r.protocolo === "nao" && (r.ascendente === "pai" || r.ascendente === "avo"),
         opcoes: [
           { valor: "nunca", rotulo: "Não, foi cidadão italiano a vida toda" },
-          { valor: "naturalizou", rotulo: "Sim, virou brasileiro" },
+          { valor: "naturalizou", rotulo: "Sim, se naturalizou" },
           { valor: "nao-sei", rotulo: "Não sei dizer" },
         ],
       },
@@ -83,7 +95,8 @@ export const italiana: Variante = {
         ajuda: "É a outra porta que a lei de 2025 deixou aberta.",
         mostrarSe: (r) =>
           r.protocolo === "nao" &&
-          ((r.ascendente === "avo" && r.naturalizacao !== "nunca") || r.ascendente === "bisavo"),
+          (((r.ascendente === "pai" || r.ascendente === "avo") && r.naturalizacao !== "nunca") ||
+            r.ascendente === "bisavo"),
         opcoes: [
           { valor: "sim", rotulo: "Sim" },
           { valor: "nao", rotulo: "Não" },
@@ -160,6 +173,15 @@ export const italiana: Variante = {
         segueFunil: true,
       },
       {
+        id: "judicial-proximo",
+        titulo: "Fora da regra automática, com caminho a discutir",
+        texto:
+          "Mesmo sendo filho ou neto, a naturalização do seu ascendente tira o caso da regra automática da lei de 2025, que exige cidadania italiana exclusiva. As portas que restam passam por análise fina: a residência do genitor na Itália, a data exata da naturalização e as teses que os tribunais estão julgando agora. É caso de documento na mesa, não de resposta pronta.",
+        chamadaVsl: "Seu caso saiu da regra automática por um detalhe. Entenda quais portas restam.",
+        tom: "atencao",
+        segueFunil: true,
+      },
+      {
         id: "sem-direito",
         titulo: "A Lei 74 fechou essa via",
         texto:
@@ -178,7 +200,9 @@ export const italiana: Variante = {
         if (r.naturalizacao === "nunca") return "administrativa";
         if (r.residencia === "sim") return "administrativa";
         if (r.naturalizacao === "nao-sei" || r.residencia === "nao-sei") return "analise-documental";
-        return "judicial";
+        // filho/neto com exclusividade quebrada: resultado próprio, sem
+        // emprestar o texto escrito para bisnetos
+        return "judicial-proximo";
       }
       // bisavô ou mais distante
       if (r.residencia === "sim") return "administrativa";

@@ -36,6 +36,11 @@ export default function Vsl({ slug }: { slug: string }) {
       <div className={`wrap ${s.grade}`}>
         <div className={s.cabeca} data-reveal>
           <p className={`etiqueta ${s.etiqueta}`}>{vsl.etiqueta}</p>
+          {resultado && (
+            <p className={s.chipResultado}>
+              Seu resultado: <b>{resultado.titulo}</b>
+            </p>
+          )}
           <h2 className={`titulo ${s.h2}`}>{chamada ?? vsl.titulo}</h2>
           <p className={s.sub}>{vsl.sub}</p>
         </div>
