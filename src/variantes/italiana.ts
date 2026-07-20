@@ -143,10 +143,10 @@ export const italiana: Variante = {
       },
       {
         id: "analise-documental",
-        titulo: "Depende de um documento",
+        titulo: "Depende do registro de naturalização do seu ascendente",
         texto:
-          "O seu caminho existe ou não conforme a data e o registro da naturalização do seu ascendente. Isso não se descobre em teste de site: se descobre em certidão. É a primeira coisa que a análise verifica.",
-        chamadaVsl: "Seu caso depende de um documento específico. Saiba qual e onde ele mora.",
+          "O seu caminho existe ou não conforme a data e o registro da naturalização do seu ascendente. Só a certidão responde isso, e ela é a primeira coisa que a análise verifica.",
+        chamadaVsl: "Seu caso vira com a data de uma naturalização. Entenda o que ela decide.",
         tom: "atencao",
         segueFunil: true,
       },
@@ -161,9 +161,9 @@ export const italiana: Variante = {
       },
       {
         id: "sem-direito",
-        titulo: "Provavelmente sem caminho hoje",
+        titulo: "A Lei 74 fechou essa via",
         texto:
-          "Sendo direto com você: com as respostas que deu, a lei atual não oferece caminho administrativo e as teses judiciais conhecidas não se aplicam. Preferimos dizer isso agora a vender esperança.",
+          "Vamos ser francos: com as respostas que você deu, a lei atual não oferece caminho administrativo e as teses judiciais conhecidas não se aplicam. Preferimos dizer isso agora a vender esperança.",
         chamadaVsl: "Veja por que a lei de 2025 fechou esse caminho e o que ainda pode mudar.",
         tom: "negativo",
         segueFunil: false,
@@ -189,8 +189,8 @@ export const italiana: Variante = {
 
   vsl: {
     etiqueta: "A análise em vídeo",
-    titulo: "O que a lei de 2025 mudou de verdade, explicado por quem conduz processos",
-    sub: "Sem rodeio: quem manteve o direito, quem foi pro judicial, o que um processo sério exige de documento, tempo e investimento, e pra quem esse trabalho não é.",
+    titulo: "Quem sobreviveu à lei de 2025 e quem foi pro tribunal, na palavra de quem conduz processos",
+    sub: "As três exceções que ficaram abertas, as teses que os tribunais ainda discutem e o que um processo sério exige de documento, tempo e investimento. Com o aviso que ninguém dá: os casos que não valem seu dinheiro.",
     idVideo: "",
   },
 
@@ -224,9 +224,9 @@ export const italiana: Variante = {
   filtro: {
     titulo: "Esse trabalho não é pra você se",
     itens: [
-      "Você quer promessa de cidadania garantida. Nenhum advogado sério assina isso, e quem assina não é advogado.",
+      "Você quer promessa de cidadania garantida. Nenhum advogado sério assina garantia de decisão de órgão público.",
       "Você procura o menor preço, não o processo bem feito. Existe assessoria mais barata; refazer processo devolvido custa mais caro.",
-      "Você não tem nenhum ascendente italiano na linha. Sem o vínculo de sangue, não há tese que invente o direito.",
+      "Você não tem nenhum ascendente italiano na linha. Sem um italiano na ascendência, não há tese que invente o direito.",
       "Você precisa do passaporte em 90 dias. A fila do consulado e do tribunal não anda no prazo de ninguém.",
     ],
   },

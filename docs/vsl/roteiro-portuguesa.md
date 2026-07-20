@@ -8,8 +8,9 @@ fixos (ver roteiro-mestre.md). Base jurídica: docs/pesquisa/portuguesa.md.
 > Em maio de 2026, dois meses atrás, Portugal mudou a lei da nacionalidade.
 > Neto de português agora faz teste de língua e de cultura, e passa pelo crivo
 > do Ministério Público. A via dos sefarditas acabou de vez.
-> Se você tem sangue português e vinha empurrando esse assunto com a barriga,
-> este vídeo é o resumo do que mudou e do que ainda está aberto pra você.
+> Se você tem pai, avô ou bisavô português e vinha empurrando esse assunto
+> com a barriga, este vídeo é o resumo do que mudou e do que ainda está
+> aberto pra você.
 
 *(Rubrica: tom de notícia, não de pânico. A urgência aqui é real e
 documentada; não precisa dramatizar.)*
@@ -19,8 +20,8 @@ documentada; não precisa dramatizar.)*
 > Primeiro, a boa notícia, porque tem boa notícia.
 > Se o seu pai ou a sua mãe é português, nada mudou pra você. A lei chama isso
 > de atribuição: você registra o seu nascimento no registo civil português e a
-> nacionalidade é sua de origem, desde o dia em que você nasceu. Sem teste,
-> sem crivo, sem discussão. O trabalho é achar o assento do seu ascendente em
+> nacionalidade é sua de origem, desde o dia em que você nasceu. Teste e
+> crivo, aqui, não existem. O trabalho é achar o assento do seu ascendente em
 > Portugal e montar o pedido sem erro.
 
 > Agora, o neto. Aqui mora a mudança de maio de 2026.
@@ -31,12 +32,13 @@ documentada; não precisa dramatizar.)*
 > Ministério Público olhando o processo.
 > E tem um detalhe que quase ninguém te conta: o teste de cultura ainda nem
 > tem regulamento. O governo tem até meados de agosto de 2026 pra definir as
-> regras. Ou seja: estamos exatamente no momento em que saber conduzir o
-> processo tecnicamente vale mais do que nunca.
+> regras. Quem entra com o processo agora entra num tabuleiro que ainda está
+> sendo montado. É trabalho pra quem acompanha a regra de perto, não pra
+> formulário de balcão.
 > [VALIDAR COM ADVOGADO: status do regulamento na data da gravação.]
 
 > E o bisneto? A pergunta que mais chega.
-> Bisneto não tem porta direta, e isso não é novidade de 2026. Mas tem rota,
+> Bisneto não tem via direta, e isso não é novidade de 2026. Mas tem rota,
 > e ela é interessante: a nacionalidade portuguesa, quando atribuída, vale
 > desde o nascimento. Então o caminho é em duas etapas. O seu pai ou a sua
 > mãe, neto do português, tira a nacionalidade primeiro. No momento em que
@@ -51,7 +53,7 @@ documentada; não precisa dramatizar.)*
 > caso muda de desenho, e pode ainda existir caminho. Mas isso não se descobre
 > em vídeo: se descobre com a certidão de naturalização na mesa.
 
-> Resumindo o mapa: filho, porta direta intacta. Neto, porta aberta com régua
+> Resumindo o mapa: filho, via direta intacta. Neto, aberto com a régua
 > nova. Bisneto, rota em duas etapas que começa pelo seu pai ou pela sua mãe.
 > E todo protocolo feito garante a regra do dia em que entrou.
 

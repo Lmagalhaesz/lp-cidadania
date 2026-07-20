@@ -22,7 +22,7 @@ export const lituana: Variante = {
     etiqueta: "Cidadania lituana · análise de elegibilidade",
     titulo: "Sua família saiu da Lituânia. {destaque}",
     tituloDestaque: "O direito de voltar continua no seu nome.",
-    sub: "A lei lituana permite restaurar a cidadania de quem era cidadão antes de 1940, até a geração dos bisnetos, mantendo a cidadania brasileira em quase todos os casos de emigração ao Brasil. É um passaporte da União Europeia dormindo em certidões antigas, e quase ninguém no Brasil sabe disso. Veja em 2 minutos se a sua linha se encaixa.",
+    sub: "A lei lituana permite restaurar a cidadania de quem era cidadão antes de 1940, até a geração dos bisnetos. Na emigração clássica ao Brasil, você mantém a cidadania brasileira. É um direito registrado em certidões dos anos 1930, e quase nenhuma família brasileira sabe que tem. Veja em 2 minutos se a sua linha se encaixa.",
     fato: {
       texto:
         "Lei da Cidadania da Lituânia (XI-1196, art. 9): cidadão de antes de 15/06/1940 e seus filhos, netos e bisnetos podem restaurar a cidadania. Quem saiu do país antes de 11/03/1990, e seus descendentes, não precisa renunciar à brasileira.",
@@ -128,9 +128,9 @@ export const lituana: Variante = {
       },
       {
         id: "sem-direito",
-        titulo: "Provavelmente sem caminho hoje",
+        titulo: "A lei lituana não te alcança hoje",
         texto:
-          "Sendo direto: sem um antepassado lituano identificado na linha direta, a via da descendência não existe. Preferimos dizer isso agora a cobrar pra descobrir depois.",
+          "Sem rodeio: sem um antepassado lituano identificado na linha direta, a via da descendência não existe. Preferimos dizer isso agora a cobrar pra descobrir depois.",
         chamadaVsl: "Veja como a lei lituana desenha o direito e por que ele não alcança este caso.",
         tom: "negativo",
         segueFunil: false,
@@ -215,7 +215,7 @@ export const lituana: Variante = {
     {
       pergunta: "Quanto tempo leva?",
       resposta:
-        "O exame oficial do pedido leva até 12 meses. Antes disso vem a fase documental, que varia: nos processos que o Dr. Gustavo conduz, já houve caso pronto em poucos meses e caso de 2 anos, quando dependeu de certidão difícil e resposta de arquivo. Prazo fechado, ninguém sério promete.",
+        "O exame oficial do pedido leva até 12 meses. Antes vem a fase documental, e é ela quem manda no calendário: o que estica um processo é certidão que ninguém sabia onde estava ou resposta de arquivo no exterior. Prazo fechado, ninguém sério promete.",
     },
     {
       pergunta: "Como sei que isso não é golpe?",

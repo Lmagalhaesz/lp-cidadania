@@ -60,15 +60,16 @@ o que muda é o bloco [MIOLO-PAÍS] e o gancho de abertura. Duração alvo:
 > Se houver número confirmado, entra aqui: "já conduzi X processos". Sem
 > número confirmado, esta linha NÃO entra.]
 > E vou te falar uma coisa que quem vende cidadania não gosta de falar:
-> processo desse tipo não tem atalho. Tem lei, tem documento e tem fila.
+> processo desse tipo não tem atalho. Tem lei, tem documento. E tem uma fila
+> que não anda no prazo de ninguém.
 > O que muda a sua vida é saber, antes de gastar um real, se a lei te alcança.
 
 ### Bloco 4 — Ancoragem de seriedade
 
 > Agora, um aviso honesto.
 > Isso aqui é um processo jurídico de verdade, num órgão público de outro
-> país. Tem certidão de inteiro teor, tem apostila, tem tradução juramentada,
-> tem taxa oficial. Nos casos que eu conduzo, já teve processo que fechou em
+> país, com certidão de inteiro teor, apostila, tradução juramentada e taxa
+> oficial no meio do caminho. Nos casos que eu conduzo, já teve processo que fechou em
 > dois meses e processo que levou dois anos, porque dependia de um documento
 > que ninguém sabia onde estava.
 > É um investimento sério, de dinheiro e de paciência, pra um resultado que
@@ -93,7 +94,7 @@ o que muda é o bloco [MIOLO-PAÍS] e o gancho de abertura. Duração alvo:
 > Se você fez o teste da página, o seu resultado chega junto pra mim.
 > Quem responde sou eu, no seu WhatsApp, pra dizer o que o seu caso exige
 > e qual o próximo passo.
-> Sem robô, sem fila de atendente. Preencha aí embaixo e a gente se fala.
+> Sem robô no meio do caminho. Preencha aí embaixo e a gente se fala.
 
 Os miolos estão em `roteiro-lituana.md`, `roteiro-portuguesa.md` e
 `roteiro-italiana.md`, cada um com o gancho próprio (bloco 1) e o miolo

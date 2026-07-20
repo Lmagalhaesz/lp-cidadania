@@ -24,8 +24,8 @@ fixos (ver roteiro-mestre.md). Base jurídica: docs/pesquisa/lituana.md.
 > Quando a Lituânia voltou a ser independente, em 1990, ela tomou uma decisão
 > rara: escreveu na lei que quem era cidadão antes da ocupação, antes de 15 de
 > junho de 1940, não perdeu a cidadania. E que os descendentes têm o direito
-> de RESTAURAR essa cidadania. Não é favor, não é visto especial. É restauração
-> de um direito que a ocupação interrompeu.
+> de RESTAURAR essa cidadania. A lei chama de restauração por um motivo: o
+> direito nunca deixou de existir, a ocupação é que interrompeu.
 
 > Agora presta atenção nos três detalhes que definem se isso te alcança.
 > Primeiro: a lei vale pra filho, neto e bisneto de quem era cidadão antes de

@@ -23,8 +23,8 @@ export const portuguesa: Variante = {
   hero: {
     etiqueta: "Nacionalidade portuguesa · análise de elegibilidade",
     titulo: "A lei portuguesa mudou em maio de 2026. {destaque}",
-    tituloDestaque: "Quem entende a regra nova sai na frente da fila.",
-    sub: "Neto de português agora enfrenta teste de língua e cultura e análise do Ministério Público. A via dos sefarditas acabou. E a fila passa de 500 mil processos. Nada disso significa que seu direito sumiu: significa que protocolar certo, e logo, ficou mais importante. Comece vendo qual é o seu caso.",
+    tituloDestaque: "Quem protocola hoje trava a regra de hoje.",
+    sub: "Neto de português agora enfrenta teste de língua e cultura e análise do Ministério Público. A via dos sefarditas acabou. E a fila de pedidos soma centenas de milhares. Nada disso apaga o seu direito. Só muda o custo de protocolar errado, ou tarde. Comece vendo qual é o seu caso.",
     fato: {
       texto:
         "Lei Orgânica nº 1/2026, em vigor desde 19/05/2026: filho de português segue com atribuição direta; neto passou a cumprir também os requisitos do art. 6.º (língua, cultura, idoneidade). Processos já protocolados seguem a lei antiga.",
@@ -41,7 +41,7 @@ export const portuguesa: Variante = {
       {
         id: "ascendente",
         pergunta: "Quem na sua família nasceu em Portugal?",
-        ajuda: "A pessoa mais próxima de você na linha direta. Cônjuge conta em outra porta da lei.",
+        ajuda: "A pessoa mais próxima de você na linha direta. Cônjuge conta por outra regra da lei.",
         opcoes: [
           { valor: "pai", rotulo: "Meu pai ou minha mãe" },
           { valor: "avo", rotulo: "Meu avô ou minha avó" },
@@ -111,17 +111,17 @@ export const portuguesa: Variante = {
         id: "atribuicao-neto",
         titulo: "Elegível pela via do neto, com a régua nova",
         texto:
-          "A via do neto continua aberta, mas desde 19/05/2026 exige mais: além dos laços com a comunidade portuguesa, entra teste de língua e cultura e análise de idoneidade. O regulamento do teste ainda está sendo definido pelo governo. Traduzindo: seu direito existe, e a forma de exercer está mudando agora, o que torna a condução técnica mais importante que nunca.",
+          "A via do neto continua aberta, mas desde 19/05/2026 exige mais: além dos laços com a comunidade portuguesa, entra teste de língua e cultura e análise de idoneidade. O governo ainda nem publicou o regulamento do teste, o prazo dele corre até agosto. Seu direito existe; a forma de exercer está sendo desenhada agora, e quem protocola bem nesse intervalo protocola na regra do dia.",
         chamadaVsl: "Seu caso é a via do neto, a que mais mudou em 2026. Entenda a régua nova.",
         tom: "aberto",
         segueFunil: true,
       },
       {
         id: "analise-perda",
-        titulo: "Depende de um documento",
+        titulo: "Depende da certidão de naturalização do seu avô",
         texto:
-          "Se o seu avô se naturalizou brasileiro antes de 1981, a lei da época fazia perder a nacionalidade portuguesa, e isso muda o desenho do seu caso: pode haver caminho por reaquisição ou por outra pessoa da linha. Não dá pra responder por teste: dá pra responder com a certidão de naturalização em mãos.",
-        chamadaVsl: "Seu caso depende de um documento específico. Saiba qual e onde procurá-lo.",
+          "Se o seu avô se naturalizou brasileiro antes de 1981, a lei da época fazia perder a nacionalidade portuguesa, e isso muda o desenho do seu caso: pode haver caminho por reaquisição ou por outra pessoa da linha. Só a certidão de naturalização responde isso, e ela é a primeira coisa que a análise busca.",
+        chamadaVsl: "Seu caso depende da certidão de naturalização do seu avô. Veja o que ela decide.",
         tom: "atencao",
         segueFunil: true,
       },
@@ -156,9 +156,9 @@ export const portuguesa: Variante = {
       },
       {
         id: "sem-direito",
-        titulo: "Provavelmente sem caminho hoje",
+        titulo: "A lei de 2026 não abre caminho pro seu caso",
         texto:
-          "Sendo direto: sem ascendente português na linha reta e sem relação com cidadão português, a lei atual não oferece caminho por descendência. A via que resta é a residência legal em Portugal, hoje 7 anos para brasileiros.",
+          "A resposta honesta: sem ascendente português na linha reta e sem relação com cidadão português, a lei atual não oferece caminho por descendência. A via que resta é a residência legal em Portugal, hoje 7 anos para brasileiros.",
         chamadaVsl: "Veja o que a lei de 2026 mudou e por que esse caminho fechou.",
         tom: "negativo",
         segueFunil: false,
@@ -196,8 +196,8 @@ export const portuguesa: Variante = {
 
   vsl: {
     etiqueta: "A análise em vídeo",
-    titulo: "O que a lei de maio de 2026 mudou de verdade, explicado por quem conduz processos",
-    sub: "A régua nova do neto, o fim dos sefarditas, a fila de 500 mil processos e o que um pedido bem montado exige de documento, tempo e investimento. E pra quem esse trabalho não é.",
+    titulo: "A régua nova do neto e a rota do bisneto, explicadas por quem conduz processos",
+    sub: "O que a lei de maio de 2026 mudou, o fim dos sefarditas, a fila de centenas de milhares de pedidos e o que um pedido bem montado exige de documento, tempo e investimento. No fim, o perfil de caso que a gente recusa.",
     idVideo: "",
   },
 
@@ -211,14 +211,14 @@ export const portuguesa: Variante = {
           "Localizamos o assento do seu ascendente em Portugal (conservatória ou Registos Centrais) e amarramos as gerações com certidões brasileiras de inteiro teor, apostiladas.",
       },
       {
-        titulo: "Definição da porta certa",
+        titulo: "Definição da via certa",
         texto:
-          "Filho, neto, duas etapas ou aquisição por casamento: cada porta tem requisitos e riscos próprios na lei nova. A escolha é técnica, não comercial.",
+          "Filho, neto, duas etapas ou aquisição por casamento: cada via tem requisitos e riscos próprios na lei nova. A escolha é técnica, não comercial.",
       },
       {
         titulo: "Pedido montado e protocolado",
         texto:
-          "Formulários, emolumentos, procurações e o protocolo no órgão certo. Pedido devolvido por erro de forma é ano perdido numa fila que passa de 500 mil processos.",
+          "Formulários, emolumentos, procurações e o protocolo no órgão certo. Pedido devolvido por erro de forma é ano perdido numa fila de centenas de milhares.",
       },
       {
         titulo: "Acompanhamento até o registo",
@@ -234,7 +234,7 @@ export const portuguesa: Variante = {
       "Você quer promessa de nacionalidade garantida. Quem garante resultado de processo público está mentindo, com ou sem sotaque de anúncio.",
       "Você procura o menor preço, não o processo bem feito. Pedido devolvido por vício de forma volta pro fim da fila.",
       "Você não tem ascendência portuguesa nem relação com cidadão português. Sem vínculo, não há pedido que se sustente.",
-      "Você precisa do documento em poucos meses. A fila oficial passa de 500 mil processos; quem promete driblar isso não está sendo honesto.",
+      "Você precisa do documento em poucos meses. A fila oficial soma centenas de milhares de pedidos; quem promete driblar isso não está sendo honesto.",
     ],
   },
 
@@ -247,7 +247,7 @@ export const portuguesa: Variante = {
     {
       pergunta: "Sou bisneto. Ainda tenho direito?",
       resposta:
-        "Não pela porta direta, e isso não é novidade de 2026. A rota real é em duas etapas: seu pai ou mãe (neto do português) obtém a nacionalidade primeiro e você entra na sequência como filho de português. A alternativa criada em 2026 exige morar legalmente em Portugal por 5 anos. O teste desta página identifica qual das duas faz sentido pra você.",
+        "Não pela via direta, e isso não é novidade de 2026. A rota real é em duas etapas: seu pai ou mãe (neto do português) obtém a nacionalidade primeiro e você entra na sequência como filho de português. A alternativa criada em 2026 exige morar legalmente em Portugal por 5 anos. O teste desta página identifica qual das duas faz sentido pra você.",
     },
     {
       pergunta: "Quanto custa o processo?",
@@ -257,7 +257,7 @@ export const portuguesa: Variante = {
     {
       pergunta: "Quanto tempo leva?",
       resposta:
-        "A fila oficial é longa: os registos centrais analisavam em 2026 processos protocolados em 2022. Transcrição de filho menor tem corrido em menos de um ano. Nos casos que o Dr. Gustavo conduz, já houve processo de meses e processo de 2 anos, conforme o documento que faltava. Prazo fechado, ninguém sério promete.",
+        "A fila oficial é longa: os registos centrais analisavam em 2026 processos protocolados em 2022. Transcrição de filho menor tem corrido em menos de um ano. O que estica um caso, quase sempre, é documento mal amarrado, e isso dá pra controlar. O resto é fila, e fila ninguém promete.",
     },
     {
       pergunta: "Como sei que isso não é golpe?",

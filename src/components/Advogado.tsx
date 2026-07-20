@@ -37,11 +37,9 @@ export default function Advogado({ variante }: { variante: Variante }) {
             <p>
               Processo de cidadania não tem atalho honesto. Nos casos que ele
               conduz, há dossiê que fecha em 2 meses e há dossiê que leva 2
-              anos, porque depende de certidão que ninguém sabia onde estava,
-              de fila de órgão público, de resposta de arquivo no exterior.
-              A diferença entre os dois quase sempre é feita antes de começar:
-              na análise de quem você é na linha da família e do que existe de
-              papel para provar.
+              anos. O que separa um do outro quase sempre se decide antes de
+              começar: na análise de quem você é na linha da família e do que
+              existe de papel para provar.
             </p>
             <p>
               Por isso esta página começa com um teste, e não com um botão de

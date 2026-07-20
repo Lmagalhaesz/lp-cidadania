@@ -22,7 +22,7 @@ fixos (ver roteiro-mestre.md). Base jurídica: docs/pesquisa/italiana.md.
 > O decreto de março de 2025, convertido na Lei 74 em maio, criou uma regra
 > nova: quem nasceu fora da Itália e tem outra cidadania, em regra, não é mais
 > reconhecido automaticamente como italiano. A lei abriu exceções, e é nelas
-> que mora o seu caso, se ele existir.
+> que o seu caso se decide, se ele existir.
 
 > Exceção um: quem já estava no jogo. Pedido protocolado no consulado, na
 > comune, ou ação na Justiça até 27 de março de 2025, às 23h59 no horário de
@@ -49,9 +49,9 @@ fixos (ver roteiro-mestre.md). Base jurídica: docs/pesquisa/italiana.md.
 > constitucionalidade ainda pendentes de julgamento.
 > [VALIDAR COM ADVOGADO: estado das teses judiciais na data da gravação;
 > essa área está mudando mês a mês.]
-> Só que tese judicial é isso: tese. Tem risco, tem custo, tem prazo próprio.
-> Quem te vende ação na Itália como se fosse fila de cartório está te
-> enganando duas vezes.
+> Só que tese judicial é isso: tese. Tem risco e tem custo, e o prazo é do
+> tribunal, não seu. Quem te vende ação na Itália como se fosse fila de
+> cartório está te enganando duas vezes.
 
 > Resumindo o mapa: protocolou até março de 2025, regra antiga. Filho ou neto
 > de italiano de cidadania exclusiva, via administrativa aberta. Bisneto sem
