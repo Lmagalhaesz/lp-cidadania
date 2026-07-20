@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ga4Event } from "@/lib/analytics";
 import { publicarResultado, type RespostaQuiz } from "@/lib/eventos";
+import { faixaBandeira } from "@/lib/pais";
 import { variantePorSlug } from "@/variantes/registro";
 import type { ResultadoDef } from "@/variantes/tipos";
 import s from "./Quiz.module.css";
@@ -88,11 +89,22 @@ export default function Quiz({ slug }: { slug: string }) {
   const pergunta = fase === "perguntas" ? visiveis[indice] : quiz.urgencia;
 
   return (
-    <div id="verificar" className={s.ficha}>
-      <div className={s.cabecalhoFicha}>
-        <p className={s.rotuloFicha}>{quiz.etiqueta}</p>
-      </div>
-      {fase !== "resultado" ? (
+    <section id="quiz" className={s.secao}>
+      <div className={`wrap ${s.miolo}`}>
+        <div className={s.cabeca} data-reveal>
+          <p className="etiqueta">{quiz.etiqueta}</p>
+          <h2 className={`titulo ${s.h2}`}>
+            Descubra agora. Leva 2 minutos.
+          </h2>
+        </div>
+        <div id="verificar" className={s.ficha} data-reveal="1">
+          {/* filete com as cores do país: identidade local, discreta */}
+          <i
+            className={s.filete}
+            style={{ background: faixaBandeira(variante.pais) }}
+            aria-hidden="true"
+          />
+          {fase !== "resultado" ? (
             <>
               <div className={s.progresso}>
                 <span className={s.progressoRotulo}>
@@ -168,6 +180,11 @@ export default function Quiz({ slug }: { slug: string }) {
               </div>
             )
           )}
-    </div>
+        </div>
+        <p className={s.notaLegal} data-reveal="2">
+          Base legal: {variante.hero.fato.texto} Fonte: {variante.hero.fato.fonte}.
+        </p>
+      </div>
+    </section>
   );
 }

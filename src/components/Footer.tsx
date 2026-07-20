@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MARCA } from "@/lib/marca";
 import s from "./Footer.module.css";
 
@@ -18,9 +19,9 @@ export default function Footer() {
             Cada caso depende de análise individual de documentos. Nenhum
             resultado de teste nesta página constitui parecer jurídico.
           </p>
-          <a className={s.link} href="/privacidade">
+          <Link className={s.link} href="/privacidade">
             Política de privacidade
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

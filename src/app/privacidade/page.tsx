@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Footer from "@/components/Footer";
 import { MARCA } from "@/lib/marca";
 import s from "./privacidade.module.css";
@@ -71,9 +72,9 @@ export default function Privacidade() {
           </p>
         </div>
 
-        <a className={s.voltar} href="/">
+        <Link className={s.voltar} href="/">
           ‹ voltar
-        </a>
+        </Link>
       </main>
       <Footer />
     </>

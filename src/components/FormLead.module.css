@@ -1,39 +1,44 @@
 .secao {
-  padding-block: clamp(56px, 8vw, 96px);
+  padding-block: clamp(64px, 9vw, 120px);
+  background: var(--fundo-2);
+  border-top: 1px solid var(--borda);
 }
 
 .grade {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 1fr);
-  gap: clamp(32px, 5vw, 64px);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  gap: clamp(36px, 5vw, 72px);
+  align-items: center;
 }
 
 .h2 {
-  font-size: clamp(28px, 3.6vw, 40px);
-  margin-top: 16px;
+  font-size: clamp(28px, 3.6vw, 42px);
+  margin-top: 14px;
 }
 
 .sub {
   margin-top: 14px;
-  color: var(--tinta-2);
-  max-width: 50ch;
+  color: var(--cinza-2);
+  max-width: 46ch;
+  font-size: 16px;
 }
 
 .contexto {
   margin-top: 20px;
-  font-size: 14.5px;
-  color: var(--tinta-2);
-  border-left: 2px solid var(--selo);
-  padding-left: 14px;
+  display: inline-block;
+  font-size: 14px;
+  color: var(--verde-2);
+  background: var(--verde-suave);
+  border-radius: var(--raio);
+  padding: 10px 14px;
 }
 
 .ficha {
-  background: var(--papel-2);
-  border: 1px solid var(--linha);
-  border-radius: var(--raio);
-  box-shadow: var(--sombra-ficha);
-  padding: clamp(22px, 3.5vw, 32px);
+  background: var(--fundo);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-2);
+  padding: clamp(24px, 3.5vw, 34px);
 }
 
 .campo {
@@ -44,51 +49,52 @@
 }
 
 .campo label {
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--tinta-2);
+  color: var(--cinza-2);
 }
 
 .campo input,
 .campo select {
-  border: 1px solid var(--linha-forte);
+  border: 1px solid var(--borda-2);
   border-radius: var(--raio);
-  background: #fff;
-  color: var(--tinta);
+  background: var(--fundo);
+  color: var(--ink);
   padding: 13px 14px;
-  font-size: 16px;
+  font-size: 15.5px;
   width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .campo input:focus,
 .campo select:focus {
-  outline: 2px solid var(--lacre);
-  outline-offset: 0;
-  border-color: transparent;
+  outline: none;
+  border-color: var(--verde);
+  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.12);
 }
 
 .enviarBtn {
   width: 100%;
   margin-top: 6px;
+  padding: 15px 24px;
+  font-size: 16px;
 }
 
 .erro {
   margin-top: 12px;
   font-size: 14px;
-  color: var(--lacre);
+  color: #b42318;
 }
 
 .lgpd {
   margin-top: 16px;
   font-size: 12.5px;
   line-height: 1.55;
-  color: var(--tinta-3);
+  color: var(--cinza-3);
 }
 
 .lgpd a {
-  color: var(--tinta-2);
+  color: var(--cinza-2);
 }
 
 /* sucesso */
@@ -100,27 +106,26 @@
 
 .okSelo {
   display: inline-block;
-  border: 1.5px solid var(--selo);
-  color: var(--selo);
-  border-radius: var(--raio);
-  padding: 6px 11px;
-  font-size: 12px;
+  background: var(--verde-suave);
+  color: var(--verde-2);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transform: rotate(-1.2deg);
 }
 
 .okTitulo {
   margin-top: 16px;
-  font-family: var(--fonte-titulo);
-  font-size: 24px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
 .okTexto {
   margin-top: 10px;
-  color: var(--tinta-2);
-  font-size: 15.5px;
+  color: var(--cinza-2);
+  font-size: 15px;
 }
 
 .okBotao {

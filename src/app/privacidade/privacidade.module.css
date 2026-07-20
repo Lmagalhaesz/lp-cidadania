@@ -4,14 +4,14 @@
 }
 
 .h1 {
-  font-size: clamp(30px, 4.4vw, 44px);
-  margin-top: 16px;
+  font-size: clamp(28px, 4vw, 40px);
+  margin-top: 14px;
 }
 
 .atualizado {
   margin-top: 10px;
   font-size: 13px;
-  color: var(--tinta-3);
+  color: var(--cinza-3);
 }
 
 .corpo {
@@ -19,18 +19,16 @@
 }
 
 .corpo h2 {
-  font-family: var(--fonte-texto);
   font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin: 32px 0 10px;
-  color: var(--tinta);
+  letter-spacing: 0.02em;
+  margin: 30px 0 10px;
+  color: var(--ink);
 }
 
 .corpo p {
-  color: var(--tinta-2);
-  font-size: 16px;
+  color: var(--cinza-2);
+  font-size: 15.5px;
   margin-bottom: 12px;
 }
 
@@ -38,5 +36,5 @@
   display: inline-block;
   margin-top: 40px;
   font-size: 14px;
-  color: var(--tinta-2);
+  color: var(--cinza-2);
 }

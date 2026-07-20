@@ -33,7 +33,7 @@ export const lituana: Variante = {
         "Lei da Cidadania da Lituânia (XI-1196, art. 9): cidadão de antes de 15/06/1940 e seus filhos, netos e bisnetos podem restaurar a cidadania. Quem saiu do país antes de 11/03/1990, e seus descendentes, não precisa renunciar à brasileira.",
       fonte: "e-seimas.lrs.lt · migracija.lt, Departamento de Migração",
     },
-    ctaQuiz: "Fazer o teste",
+    ctaQuiz: "Descobrir meu direito",
   },
 
   marquee: [

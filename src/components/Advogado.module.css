@@ -1,11 +1,11 @@
 .secao {
-  padding-block: clamp(56px, 8vw, 96px);
-  border-top: 1px solid var(--linha);
+  padding-block: clamp(64px, 9vw, 120px);
+  scroll-margin-top: 70px;
 }
 
 .grade {
   display: grid;
-  grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.4fr);
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.4fr);
   gap: clamp(32px, 5vw, 72px);
   align-items: start;
 }
@@ -13,41 +13,40 @@
 .retrato {
   margin: 0;
   position: sticky;
-  top: 90px;
+  top: 96px;
 }
 
 .fotoPlaceholder {
   aspect-ratio: 4 / 5;
   background:
-    radial-gradient(400px 300px at 30% 20%, rgba(158, 43, 37, 0.1), transparent 60%),
-    var(--arquivo);
-  border-radius: var(--raio);
+    radial-gradient(340px 260px at 30% 20%, rgba(4, 120, 87, 0.14), transparent 60%),
+    var(--ink);
+  border-radius: var(--raio-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--linha);
-  box-shadow: var(--sombra-ficha);
+  box-shadow: var(--sombra-2);
 }
 
 .fotoPlaceholder span {
-  font-family: var(--fonte-titulo);
-  font-style: italic;
-  font-size: 64px;
-  color: rgba(246, 242, 234, 0.35);
+  font-size: 56px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.28);
 }
 
 .legenda {
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--tinta-3);
+  color: var(--cinza-3);
 }
 
 .h2 {
-  font-size: clamp(28px, 3.6vw, 40px);
-  margin-top: 16px;
+  font-size: clamp(26px, 3.4vw, 40px);
+  margin-top: 14px;
   max-width: 18ch;
 }
 
@@ -55,18 +54,19 @@
   margin-top: 22px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  max-width: 60ch;
+  gap: 16px;
+  max-width: 62ch;
 }
 
 .texto p {
-  color: var(--tinta-2);
-  font-size: 16.5px;
+  color: var(--cinza-2);
+  font-size: 15.5px;
+  line-height: 1.7;
 }
 
 .texto p:first-child {
-  color: var(--tinta);
-  font-size: 17.5px;
+  color: var(--cinza);
+  font-size: 17px;
 }
 
 @media (max-width: 780px) {
@@ -76,6 +76,6 @@
 
   .retrato {
     position: static;
-    max-width: 300px;
+    max-width: 280px;
   }
 }

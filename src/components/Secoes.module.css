@@ -1,0 +1,197 @@
+.secao {
+  padding-block: clamp(64px, 9vw, 120px);
+}
+
+.secaoCinza {
+  background: var(--fundo-2);
+  border-block: 1px solid var(--borda);
+}
+
+.h2 {
+  font-size: clamp(28px, 3.6vw, 44px);
+  margin-top: 14px;
+  max-width: 24ch;
+}
+
+/* faixa de prova factual */
+.prova {
+  border-block: 1px solid var(--borda);
+  background: var(--fundo-2);
+}
+
+.provaGrade {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  padding-block: 36px;
+}
+
+.provaTitulo {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.provaTexto {
+  margin-top: 4px;
+  font-size: 13.5px;
+  color: var(--cinza-2);
+}
+
+/* grids de cards */
+.tresCol {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.seisCol {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  padding: 26px 26px 24px;
+}
+
+.cardTitulo {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.cardTexto {
+  margin-top: 8px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--cinza-2);
+}
+
+/* timeline horizontal */
+.timeline {
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  counter-reset: etapa;
+}
+
+.etapa {
+  position: relative;
+  padding-top: 22px;
+}
+
+/* linha contínua ligando as etapas */
+.etapa::before {
+  content: "";
+  position: absolute;
+  top: 13px;
+  left: 34px;
+  right: -18px;
+  height: 2px;
+  background: var(--borda);
+}
+
+.etapa:last-child::before {
+  display: none;
+}
+
+.etapaNum {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--ink);
+  color: #fff;
+}
+
+.etapa:first-child .etapaNum {
+  background: var(--verde);
+}
+
+/* CTA final */
+.final {
+  background: var(--ink);
+}
+
+.finalMiolo {
+  text-align: center;
+  max-width: 720px;
+}
+
+.finalTitulo {
+  color: #fff;
+  font-size: clamp(28px, 3.8vw, 46px);
+}
+
+.finalSub {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 17px;
+}
+
+.finalBtn {
+  margin-top: 30px;
+  padding: 16px 32px;
+  font-size: 16.5px;
+}
+
+@media (max-width: 900px) {
+  .provaGrade {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tresCol,
+  .seisCol {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .etapa {
+    padding-top: 0;
+    padding-left: 44px;
+  }
+
+  .etapa::before {
+    top: 32px;
+    bottom: -26px;
+    left: 13px;
+    right: auto;
+    width: 2px;
+    height: auto;
+  }
+
+  .etapaNum {
+    top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .tresCol,
+  .seisCol {
+    grid-template-columns: 1fr;
+  }
+
+  .provaGrade {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}

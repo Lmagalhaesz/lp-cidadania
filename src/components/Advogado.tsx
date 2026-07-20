@@ -9,7 +9,7 @@ import s from "./Advogado.module.css";
  */
 export default function Advogado({ variante }: { variante: Variante }) {
   return (
-    <section className={s.secao}>
+    <section id="sobre" className={s.secao}>
       <div className={`wrap ${s.grade}`}>
         <figure className={s.retrato} data-reveal>
           {/* Foto real do advogado (a fornecer). O placeholder mantém a

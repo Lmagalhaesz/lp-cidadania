@@ -35,7 +35,7 @@ export const portuguesa: Variante = {
         "Lei Orgânica nº 1/2026, em vigor desde 19/05/2026: filho de português segue com atribuição direta; neto passou a cumprir também os requisitos do art. 6.º (língua, cultura, idoneidade). Processos já protocolados seguem a lei antiga.",
       fonte: "Diário da República n.º 95/2026, 1.ª série · Lei 37/81 republicada",
     },
-    ctaQuiz: "Fazer o teste",
+    ctaQuiz: "Descobrir meu direito",
   },
 
   marquee: [

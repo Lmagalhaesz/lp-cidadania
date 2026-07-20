@@ -35,7 +35,7 @@ export const italiana: Variante = {
       fonte:
         "Gazzetta Ufficiale n. 118/2025 · Corte Constitucional, Sentença 63/2026",
     },
-    ctaQuiz: "Fazer o teste",
+    ctaQuiz: "Descobrir meu direito",
   },
 
   marquee: [

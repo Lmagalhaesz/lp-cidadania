@@ -5,7 +5,7 @@ import s from "./Faq.module.css";
 export default function Faq({ variante }: { variante: Variante }) {
   if (variante.faq.length === 0) return null;
   return (
-    <section className={s.secao}>
+    <section id="perguntas" className={s.secao}>
       <div className={`wrap ${s.grade}`}>
         <h2 className={`titulo ${s.h2}`} data-reveal>
           Perguntas que chegam antes do processo

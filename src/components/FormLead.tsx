@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ga4Event, lerCookie, novoEventId, pixelTrack } from "@/lib/analytics";
 import { EVENTO_QUIZ, lerResultado, type ResultadoQuiz } from "@/lib/eventos";
@@ -205,7 +206,8 @@ export default function FormLead({ slug }: { slug: string }) {
               )}
               <p className={s.lgpd}>
                 Seus dados vão direto para o {MARCA.tratamentoCurto} e servem só
-                para responder seu caso. <a href="/privacidade">Política de privacidade</a>
+                para responder seu caso.{" "}
+                <Link href="/privacidade">Política de privacidade</Link>
               </p>
             </form>
           )}

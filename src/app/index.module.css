@@ -10,14 +10,15 @@
 }
 
 .wordmark {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(30px, 5vw, 44px);
-  font-weight: 600;
+  font-size: clamp(26px, 4.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
 }
 
 .descritor {
   margin-top: 8px;
-  color: var(--tinta-2);
+  color: var(--cinza-2);
   font-size: 15px;
 }
 
@@ -34,28 +35,30 @@
   justify-content: space-between;
   gap: 16px;
   padding-block: 18px;
-  border-top: 1px solid var(--linha);
+  border-top: 1px solid var(--borda);
   text-decoration: none;
 }
 
 .item:last-child {
-  border-bottom: 1px solid var(--linha);
+  border-bottom: 1px solid var(--borda);
 }
 
 .itemPais {
   font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--tinta-3);
+  color: var(--cinza-3);
 }
 
 .itemNome {
-  font-family: var(--fonte-titulo);
-  font-size: 22px;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
   transition: color 0.12s ease;
 }
 
 .item:hover .itemNome {
-  color: var(--lacre);
+  color: var(--verde);
 }

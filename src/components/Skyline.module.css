@@ -1,0 +1,40 @@
+.faixa {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -2px;
+  pointer-events: none;
+  color: var(--cinza-3);
+  opacity: 0.4;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: clamp(96px, 13vw, 170px);
+}
+
+/* animação de desenho: cada monumento "se traça" na entrada, escalonado */
+.svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: desenhar 1.4s ease forwards;
+}
+
+@keyframes desenhar {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .svg path {
+    stroke-dashoffset: 0;
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .faixa {
+    opacity: 0.28;
+  }
+}

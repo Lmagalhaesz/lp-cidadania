@@ -1,0 +1,38 @@
+.pilula {
+  position: fixed;
+  right: clamp(14px, 3vw, 28px);
+  bottom: clamp(14px, 3vw, 28px);
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #128c50;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(18, 140, 80, 0.35);
+  opacity: 0;
+  transform: translateY(14px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.15s ease;
+}
+
+.pilula.on {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.pilula:hover {
+  background: #0e7442;
+}
+
+@media (max-width: 480px) {
+  .pilula {
+    font-size: 13px;
+    padding: 11px 15px;
+  }
+}

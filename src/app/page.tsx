@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { MARCA } from "@/lib/marca";
 import s from "./index.module.css";
 
@@ -26,10 +27,10 @@ export default function Indice() {
         </p>
         <div className={s.lista}>
           {rotas.map((r) => (
-            <a key={r.href} className={s.item} href={r.href}>
+            <Link key={r.href} className={s.item} href={r.href}>
               <span className={s.itemPais}>{r.pais}</span>
               <span className={s.itemNome}>{r.nome} ▸</span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
