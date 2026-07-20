@@ -2,9 +2,101 @@
   padding-block: clamp(40px, 6vw, 80px) clamp(120px, 15vw, 190px);
   position: relative;
   overflow: clip;
+  background: var(--fundo);
+}
+
+/* grade fina de blueprint, esvanecendo nas bordas (padrão Linear/Vercel) */
+.dobra::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(800px 400px at 85% 0%, rgba(4, 120, 87, 0.045), transparent 65%),
-    var(--fundo);
+    repeating-linear-gradient(0deg, var(--borda) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(90deg, var(--borda) 0 1px, transparent 1px 72px);
+  opacity: 0.55;
+  mask-image: radial-gradient(75% 62% at 50% 36%, #000 30%, transparent 78%);
+  pointer-events: none;
+}
+
+/* aurora: glow verde respirando devagar atrás da coluna do vídeo */
+.aurora {
+  position: absolute;
+  top: -12%;
+  right: -6%;
+  width: 620px;
+  height: 520px;
+  background: radial-gradient(closest-side, rgba(4, 120, 87, 0.11), transparent 70%);
+  filter: blur(40px);
+  animation: respirar 11s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes respirar {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: translate3d(-48px, 34px, 0) scale(1.12);
+    opacity: 1;
+  }
+}
+
+/* rota de voo Brasil → país: confinada à metade direita, longe do texto */
+.rota {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  color: var(--borda-2);
+  pointer-events: none;
+}
+
+.rotaLinha {
+  animation: marchar 2.6s linear infinite;
+}
+
+@keyframes marchar {
+  to {
+    stroke-dashoffset: -22;
+  }
+}
+
+.rotaPulso {
+  fill: none;
+  transform-origin: 560px 58px;
+  animation: pulsarDestino 2.6s ease-out infinite;
+}
+
+@keyframes pulsarDestino {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scale(3.4);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(3.4);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 940px) {
+  .rota {
+    display: none;
+  }
+
+  .aurora {
+    width: 420px;
+    height: 380px;
+    right: -20%;
+  }
 }
 
 .grade {
@@ -12,6 +104,12 @@
   grid-template-columns: minmax(0, 1fr) minmax(340px, 0.95fr);
   gap: clamp(36px, 5vw, 72px);
   align-items: center;
+}
+
+/* conteúdo SEMPRE acima das camadas decorativas (grade, aurora, rota) */
+.grade {
+  position: relative;
+  z-index: 1;
 }
 
 .colTexto {

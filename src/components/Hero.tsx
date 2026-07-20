@@ -14,6 +14,21 @@ export default function Hero({ variante }: { variante: Variante }) {
 
   return (
     <section id="topo" className={s.dobra}>
+      {/* fundo: aurora verde respirando + rota de voo Brasil → país */}
+      <div className={s.aurora} aria-hidden="true" />
+      <svg className={s.rota} viewBox="0 0 600 520" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+        <path
+          className={s.rotaLinha}
+          d="M30 500 C 150 430, 210 240, 330 150 C 420 84, 490 66, 560 58"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeDasharray="2 9"
+          strokeLinecap="round"
+        />
+        <circle cx="30" cy="500" r="3" fill="currentColor" opacity="0.5" />
+        <circle className={s.rotaDestino} cx="560" cy="58" r="4" fill="var(--verde)" />
+        <circle className={s.rotaPulso} cx="560" cy="58" r="4" stroke="var(--verde)" strokeWidth="1.5" />
+      </svg>
       <div className={`wrap ${s.grade}`}>
         <div className={s.colTexto}>
           <p className={s.pilula} data-reveal>
