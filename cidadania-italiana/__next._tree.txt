@@ -1,0 +1,5 @@
+:HL["/lp-cidadania/_next/static/chunks/0f2zlqeqfxb6i.css","style"]
+:HL["/lp-cidadania/_next/static/media/2a65768255d6b625-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/lp-cidadania/_next/static/media/e8f2fbee2754df70-s.p.1dqa_6e_ad4sj.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/lp-cidadania/_next/static/chunks/306orev97m7gs.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"cidadania-italiana","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"kmpjbYUQ1oyZDvHBpmPJm"}
