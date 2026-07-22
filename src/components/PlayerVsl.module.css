@@ -1,8 +1,25 @@
 .bloco {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   scroll-margin-top: 90px;
+}
+
+/* moldura deslocada da referência: borda atrás, SÓ ao redor do player */
+.moldura {
+  position: relative;
+}
+
+.moldura::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  right: 26px;
+  bottom: 26px;
+  border: 2px solid var(--ink);
+  border-radius: var(--raio-lg);
+  pointer-events: none;
 }
 
 .player {
@@ -12,6 +29,11 @@
   overflow: hidden;
   background: var(--ink);
   box-shadow: var(--sombra-3);
+  transition: transform 0.5s ease;
+}
+
+.moldura:hover .player {
+  transform: translate(6px, 6px);
 }
 
 .iframe {
@@ -32,8 +54,8 @@
   justify-content: center;
   gap: 14px;
   background:
-    radial-gradient(480px 240px at 50% 34%, rgba(4, 120, 87, 0.3), transparent 70%),
-    var(--ink);
+    radial-gradient(480px 240px at 50% 34%, rgba(120, 130, 200, 0.22), transparent 70%),
+    linear-gradient(270deg, #242842, #1a1e30);
   border: 0;
   color: #fff;
   padding: 20px;

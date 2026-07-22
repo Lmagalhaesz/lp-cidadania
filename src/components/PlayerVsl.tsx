@@ -25,7 +25,8 @@ export default function PlayerVsl({ slug }: { slug: string }) {
 
   return (
     <div id="analise" className={s.bloco}>
-      <div className={s.player}>
+      <div className={s.moldura}>
+        <div className={s.player}>
         {vsl.idVideo ? (
           tocando ? (
             <iframe
@@ -53,6 +54,7 @@ export default function PlayerVsl({ slug }: { slug: string }) {
             <span className={s.capaNota}>O teste abaixo já funciona.</span>
           </div>
         )}
+        </div>
       </div>
       <p className={s.legenda}>
         {resultado ? (

@@ -18,14 +18,14 @@
   pointer-events: none;
 }
 
-/* aurora: glow verde respirando devagar atrás da coluna do vídeo */
+/* aurora: glow marinho respirando devagar atrás da coluna do vídeo */
 .aurora {
   position: absolute;
   top: -12%;
   right: -6%;
   width: 620px;
   height: 520px;
-  background: radial-gradient(closest-side, rgba(4, 120, 87, 0.11), transparent 70%);
+  background: radial-gradient(closest-side, rgba(36, 40, 66, 0.1), transparent 70%);
   filter: blur(40px);
   animation: respirar 11s ease-in-out infinite alternate;
   pointer-events: none;
@@ -137,15 +137,16 @@
   box-shadow: inset 0 0 0 1px rgba(16, 17, 19, 0.08);
 }
 
-/* headline sóbria: forte pela hierarquia, não pelo tamanho */
+/* headline Playfair: elegância editorial, tamanho contido */
 .h1 {
-  font-size: clamp(28px, 3.4vw, 44px);
+  font-size: clamp(30px, 3.6vw, 48px);
   margin-top: 18px;
   max-width: 20ch;
 }
 
 .destaque {
-  color: var(--verde);
+  font-style: italic;
+  color: var(--ink);
 }
 
 .sub {

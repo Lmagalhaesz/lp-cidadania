@@ -119,13 +119,25 @@
   color: #fff;
 }
 
-.etapa:first-child .etapaNum {
-  background: var(--verde);
+/* CTA final: gradiente marinho animado (assinatura da referência) */
+.final {
+  background: linear-gradient(270deg, #242842, #1a1e30, #2b3054, #1a1e30);
+  background-size: 400% 400%;
+  animation: gradienteFinal 15s ease infinite;
 }
 
-/* CTA final */
-.final {
-  background: var(--ink);
+@keyframes gradienteFinal {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .finalMiolo {

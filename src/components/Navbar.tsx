@@ -40,7 +40,7 @@ export default function Navbar({ ctaRotulo }: { ctaRotulo: string }) {
               </a>
             ))}
           </nav>
-          <a className={`btn btn-verde ${s.cta}`} href="#quiz">
+          <a className={`btn btn-acao ${s.cta}`} href="#quiz">
             {ctaRotulo}
           </a>
         </div>

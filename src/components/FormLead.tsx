@@ -151,7 +151,7 @@ export default function FormLead({ slug }: { slug: string }) {
                 não esperar, chame agora com seu resultado já anexado:
               </p>
               <a
-                className={`btn btn-lacre ${s.okBotao}`}
+                className={`btn ${s.okBotaoWhats}`}
                 href={urlWhatsApp}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -196,7 +196,7 @@ export default function FormLead({ slug }: { slug: string }) {
                   ))}
                 </select>
               </div>
-              <button className={`btn btn-lacre ${s.enviarBtn}`} type="submit" disabled={estado === "enviando"}>
+              <button className={`btn ${s.enviarBtn}`} type="submit" disabled={estado === "enviando"}>
                 {estado === "enviando" ? "Enviando…" : "Pedir análise do meu caso ▸"}
               </button>
               {estado === "erro" && (

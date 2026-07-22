@@ -26,8 +26,8 @@ export default function Hero({ variante }: { variante: Variante }) {
           strokeLinecap="round"
         />
         <circle cx="30" cy="500" r="3" fill="currentColor" opacity="0.5" />
-        <circle className={s.rotaDestino} cx="560" cy="58" r="4" fill="var(--verde)" />
-        <circle className={s.rotaPulso} cx="560" cy="58" r="4" stroke="var(--verde)" strokeWidth="1.5" />
+        <circle className={s.rotaDestino} cx="560" cy="58" r="4" fill="var(--ink)" />
+        <circle className={s.rotaPulso} cx="560" cy="58" r="4" stroke="var(--ink)" strokeWidth="1.5" />
       </svg>
       <div className={`wrap ${s.grade}`}>
         <div className={s.colTexto}>
@@ -48,7 +48,7 @@ export default function Hero({ variante }: { variante: Variante }) {
             {hero.sub}
           </p>
           <div className={s.acoes} data-reveal="2">
-            <a className="btn btn-verde" href="#quiz">
+            <a className="btn btn-acao" href="#quiz">
               {hero.ctaQuiz}
             </a>
             <a className="btn btn-fantasma" href="#como-funciona">

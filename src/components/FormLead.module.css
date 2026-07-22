@@ -69,8 +69,8 @@
 .campo input:focus,
 .campo select:focus {
   outline: none;
-  border-color: var(--verde);
-  box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.12);
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(36, 40, 66, 0.12);
 }
 
 .enviarBtn {
@@ -78,6 +78,18 @@
   margin-top: 6px;
   padding: 15px 24px;
   font-size: 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.enviarBtn:hover {
+  background: var(--ink-2);
+  transform: translateY(-1px);
 }
 
 .erro {
@@ -128,8 +140,15 @@
   font-size: 15px;
 }
 
-.okBotao {
+/* WhatsApp: verde da plataforma (semântica, não decoração) */
+.okBotaoWhats {
   margin-top: 20px;
+  background: #128c50;
+  color: #fff;
+}
+
+.okBotaoWhats:hover {
+  background: #0e7442;
 }
 
 @media (max-width: 860px) {

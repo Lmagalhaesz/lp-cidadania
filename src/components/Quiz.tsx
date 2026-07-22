@@ -160,7 +160,7 @@ export default function Quiz({ slug }: { slug: string }) {
 
                 {resultado.segueFunil ? (
                   <div className={s.resultadoAcoes}>
-                    <a className="btn btn-lacre" href="#analise">
+                    <a className="btn btn-acao" href="#analise">
                       Assistir à análise do meu caso ▸
                     </a>
                     <p className={s.resultadoNota}>

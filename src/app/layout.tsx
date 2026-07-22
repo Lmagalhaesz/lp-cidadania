@@ -1,16 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat, Playfair_Display } from "next/font/google";
 import Analytics from "@/components/Analytics";
 import { MARCA } from "@/lib/marca";
 import { GOOGLE_SITE_VERIFICATION, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-/* Direção "startup premium": Inter única, do corpo ao display,
-   com pesos fortes e tracking apertado nos títulos. */
-const inter = Inter({
+/* Direção editorial-premium (referência lp-pagnussat):
+   Playfair Display nos títulos, Montserrat no corpo e interface. */
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-inter",
+  weight: ["500", "600", "700", "800"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-montserrat",
   display: "swap",
 });
 
@@ -48,7 +55,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      className={`${playfair.variable} ${montserrat.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         {/* Progressive enhancement: efeitos de entrada só com JS presente */}
         <script

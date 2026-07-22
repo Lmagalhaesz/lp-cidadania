@@ -143,7 +143,7 @@ export function CtaFinal({ variante }: { variante: Variante }) {
           Descobrir é gratuito e leva 2 minutos. {variante.pais} pode estar a
           um teste de distância.
         </p>
-        <a className={`btn btn-verde ${s.finalBtn}`} href="#contato" data-reveal="1">
+        <a className={`btn btn-acao ${s.finalBtn}`} href="#contato" data-reveal="1">
           {variante.hero.ctaQuiz}
         </a>
       </div>

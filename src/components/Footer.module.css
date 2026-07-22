@@ -1,6 +1,5 @@
 .rodape {
-  background: var(--fundo);
-  border-top: 1px solid var(--borda);
+  background: var(--ink-2);
 }
 
 .grade {
@@ -11,15 +10,15 @@
 }
 
 .wordmark {
-  font-size: 18px;
+  font-family: var(--fonte-titulo);
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--ink);
+  color: #fff;
 }
 
 .descritor {
   margin-top: 6px;
-  color: var(--cinza-2);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
 }
 
@@ -27,9 +26,9 @@
   margin-top: 16px;
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cinza-3);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .colunaLegal {
@@ -42,12 +41,12 @@
 .aviso {
   font-size: 13px;
   line-height: 1.6;
-  color: var(--cinza-3);
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .link {
   font-size: 13.5px;
-  color: var(--cinza-2);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: underline;
   text-underline-offset: 3px;
   width: fit-content;
