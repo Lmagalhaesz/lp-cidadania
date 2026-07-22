@@ -100,16 +100,20 @@
 /* 320px: logo + CTA precisam caber lado a lado sem vazar a viewport */
 @media (max-width: 420px) {
   .linha {
-    gap: 10px;
+    gap: 8px;
   }
 
   .marca {
-    font-size: 14.5px;
-    gap: 7px;
+    font-size: 15px;
+    gap: 6px;
+  }
+
+  .simbolo {
+    display: none;
   }
 
   .cta {
-    padding: 8px 12px;
-    font-size: 12.5px;
+    padding: 8px 10px;
+    font-size: 12px;
   }
 }
